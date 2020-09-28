@@ -30,7 +30,7 @@ and open the template in the editor.
                 </tr>
                 <tr bgcolor='yellow'>
                     <td align='center' width='50%'>Bán kính: </td>
-                    <td><input type="number" name="nRadius" value="<?php echo $radius ?>"/></td>
+                    <td><input type="number" min="0" name="nRadius" value="<?php echo $radius ?>"/></td>
                 </tr>
                 <tr bgcolor='yellow'>
                     <td align='center'>Diện tích: </td>
