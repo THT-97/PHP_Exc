@@ -59,7 +59,7 @@ and open the template in the editor.
                     <td><?php if(isset($_POST["A"])) echo $result ?></td>
                 </tr>
                 <tr class="bg-success">
-                    <td colspan="2" align='center'><a class="btn btn-default" href="Bai6.php">Quay lại</a></td>
+                    <td colspan="2" align='center'><a class="btn btn-default" href="javascript:window.history.back(-1);">Quay lại</a></td>
                 </tr>
             </table>
     </body>
