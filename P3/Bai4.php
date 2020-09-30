@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Kết quả thi đại học</title>
+        <link rel="stylesheet" href="../bootstrap.min.css"/>
     </head>
     <body>
         <?php
@@ -18,23 +19,25 @@ and open the template in the editor.
                 $phys = $_POST["Phys"];
                 $chem = $_POST["Chem"];
                 $std = $_POST["Standard"];
-                if(is_numeric($math) && is_numeric($phys) && is_numeric($chem)) $total = $math + $phys + $chem;
-                if(is_numeric($std)){
-                    if($total >= $std) $result="Đậu";
-                    else $result = "Tạch";
+                if(is_numeric($math) && is_numeric($phys) && is_numeric($chem) && $math>=0 && $phys>=0 && $chem>=0){
+                    $total = $math + $phys + $chem;
+                    if(is_numeric($std)){
+                        if($total >= $std && $math>0 && $phys>0 && $chem>0) $result="Đậu";
+                        else $result = "Tạch";
+                    }
                 }
             }
         ?>
         <form action="" method="POST">
-            <table style="border-collapse:collapse" width='30%'>
+            <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
                 <tr bgcolor='purple'>
-                    <th colspan="3" width='100%'>
+                    <th colspan="3" class="text-center">
                         <h2 style="color:white">KẾT QUẢ THI ĐẠI HỌC</h2>
                     </th>
                 </tr>
                 <tr bgcolor='pink'>
-                    <td width='50%'>Toán:</td>
-                    <td><input type="text" name="Math" value="<?php if(isset($_POST["Math"])) echo $math ?>"/></td>
+                    <td class="text-left" width="30%">Toán:</td>
+                    <td><input width="50%" type="text" name="Math" value="<?php if(isset($_POST["Math"])) echo $math ?>"/></td>
                     <td>
                         <?php 
                             if(isset($math)){
@@ -44,8 +47,8 @@ and open the template in the editor.
                     </td>
                 </tr>
                 <tr bgcolor='pink'>
-                    <td width='50%'>Lý:</td>
-                    <td><input type="text" name="Phys" value="<?php if(isset($_POST["Phys"])) echo $phys ?>"/></td>
+                    <td class="text-left" width='30%'>Lý:</td>
+                    <td><input type="text" name="Phys" width="50%" value="<?php if(isset($_POST["Phys"])) echo $phys ?>"/></td>
                     <td>
                         <?php 
                             if(isset($phys)){
@@ -55,8 +58,8 @@ and open the template in the editor.
                     </td>
                 </tr>
                 <tr bgcolor='pink'>
-                    <td width='50%'>Hóa:</td>
-                    <td><input type="text" name="Chem" value="<?php if(isset($_POST["Chem"])) echo $chem ?>"/></td>
+                    <td class="text-left" width='30%'>Hóa:</td>
+                    <td><input type="text" name="Chem" width="50%" value="<?php if(isset($_POST["Chem"])) echo $chem ?>"/></td>
                     <td>
                         <?php 
                             if(isset($chem)){
@@ -66,7 +69,7 @@ and open the template in the editor.
                     </td>
                 </tr>
                 <tr bgcolor='pink'>
-                    <td width='50%'>Điểm chuẩn:</td>
+                    <td class="text-left" width='30%'>Điểm chuẩn:</td>
                     <td><input type="text" name="Standard" value="<?php if(isset($_POST["Standard"])) echo $std ?>"/></td>
                     <td>
                         <?php 
@@ -77,17 +80,17 @@ and open the template in the editor.
                     </td>
                 </tr>
                 <tr bgcolor='pink'>
-                    <td width='50%'>Tổng điểm:</td>
+                    <td class="text-left" width='30%'>Tổng điểm:</td>
                     <td><input type="text" name="Total" disabled="1" value="<?php echo $total ?>"/></td>
                     <td></td>
                 </tr>
                 <tr bgcolor='pink'>
-                    <td width='50%'>Kết quả:</td>
+                    <td class="text-left" width='30%'>Kết quả:</td>
                     <td><input type="text" disabled="1" value="<?php echo $result ?>"/></td>
                     <td></td>
                 </tr>
                 <tr bgcolor='pink'>
-                    <td colspan="3" align='center'><input type="submit" name="Submit" value="Tính"/></td>
+                    <td colspan="3" align='center'><input class="btn btn-default" type="submit" name="Submit" value="Xem kết quả"/></td>
                 </tr>
             </table>
         </form>
