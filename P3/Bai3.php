@@ -13,6 +13,7 @@ and open the template in the editor.
         <?php
             $name = "";
             $cost = 0;
+            $unit = 20000;
             if(isset($_POST["btnSubmit"])){
                 $name = $_POST["txtName"];
                 $old = $_POST["nOld"];
