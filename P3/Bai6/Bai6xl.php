@@ -32,11 +32,11 @@ and open the template in the editor.
                     </th>
                 </tr>
                 <tr>
-                    <td class="text-left" width="40%"><b class="text-primary">Số thứ nhất:</b></td>
+                    <td class="text-right" width="40%"><b class="text-primary">Số thứ nhất:</b></td>
                     <td><?php if(isset($_POST["A"])) echo $a ?></td>
                 </tr>
                 <tr>
-                    <td class="text-left" width='40%'><b class="text-warning">Chọn phép tính:</b></td>
+                    <td class="text-right" width='40%'><b class="text-warning">Chọn phép tính:</b></td>
                     <td>
                         <b class="text-danger">
                            <?php
@@ -51,11 +51,11 @@ and open the template in the editor.
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-left" width='40%'><b class="text-primary">Số thứ hai:</b></td>
+                    <td class="text-right" width='40%'><b class="text-primary">Số thứ hai:</b></td>
                     <td><?php if(isset($_POST["B"])) echo $b ?></td>
                 </tr>
                 <tr>
-                    <td class="text-left" width='40%'><b class="text-primary">Kết quả:</b></td>
+                    <td class="text-right" width='40%'><b class="text-primary">Kết quả:</b></td>
                     <td><?php if(isset($_POST["A"])) echo $result ?></td>
                 </tr>
                 <tr class="bg-success">

@@ -19,15 +19,15 @@ and open the template in the editor.
                     </th>
                 </tr>
                 <tr>
-                    <td class="text-left" width="40%"><b class="text-primary">Số thứ nhất:</b></td>
+                    <td class="text-right" width="40%"><b class="text-primary">Số thứ nhất:</b></td>
                     <td><input width="50%" type="number" name="A" value="<?php if(isset($_POST["A"])) echo $a ?>"/></td>
                 </tr>
                 <tr>
-                    <td class="text-left" width='40%'><b class="text-primary">Số thứ hai:</b></td>
+                    <td class="text-right" width='40%'><b class="text-primary">Số thứ hai:</b></td>
                     <td><input width="50%" type="number" name="B" value="<?php if(isset($_POST["B"])) echo $b ?>"/></td>
                 </tr>
                 <tr>
-                    <td class="text-left" width='40%'><b class="text-warning">Chọn phép tính:</b></td>
+                    <td class="text-right" width='40%'><b class="text-warning">Chọn phép tính:</b></td>
                     <td>
                         <p class="text-danger">
                             <input name="operator" type="radio" value="1" <?php if(isset($_POST["operator"]) && $op==1) echo "checked=checked"?> checked/>
