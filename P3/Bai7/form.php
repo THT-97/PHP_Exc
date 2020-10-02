@@ -30,7 +30,7 @@ and open the template in the editor.
                         <td>Giới tính:</td>
                         <td>
                             <input name="rGender" type="radio" value="0" <?php if(isset($_POST["rGender"])==0)echo "checked=checked" ?> checked/>Nam
-                            <input name="rGender" type="radio" value="0" <?php if(isset($_POST["rGender"])==1)echo "checked=checked" ?>/>Nữ
+                            <input name="rGender" type="radio" value="1" <?php if(isset($_POST["rGender"])==1)echo "checked=checked" ?>/>Nữ
                         </td>
                     </tr>
                     <tr>
@@ -44,6 +44,15 @@ and open the template in the editor.
                         </td>
                     </tr>
                     <tr>
+                        <td>Các môn đã học:</td>
+                        <td>
+                            <input name="chkPhp" type="checkbox" <?php if(isset($_POST["chkPhp"])) echo 'checked=checked"'?>/> PHP & MySQL
+                            <input name="chkCpp" type="checkbox" <?php if(isset($_POST["chkCpp"])) echo 'checked=checked"'?>/> C++
+                            <input name="chkXml" type="checkbox" <?php if(isset($_POST["chkXml"])) echo 'checked=checked"'?>/> XML
+                            <input name="chkPy" type="checkbox" <?php if(isset($_POST["chkPy"])) echo 'checked=checked"'?>/> Python
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Ghi chú:</td>
                         <td>
                             <textarea name="txtComment" rows="5" cols="60">
@@ -53,8 +62,8 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td align="center" colspan="2">
-                            <input name="Submit" type="submit"  value="Gửi"/>
-                            <input name="Cancel" type="submit"  value="Hủy"/>
+                            <input name="Submit" type="submit" value="Gửi"/>
+                            <input name="Cancel" type="reset" value="Hủy"/>
                         </td>
                     </tr>
                 </table>

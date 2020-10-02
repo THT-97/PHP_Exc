@@ -33,7 +33,7 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td class="text-right" width="40%"><b class="text-primary">Số thứ nhất:</b></td>
-                    <td><?php if(isset($_POST["A"])) echo $a ?></td>
+                    <td><?php echo $a ?></td>
                 </tr>
                 <tr>
                     <td class="text-right" width='40%'><b class="text-warning">Chọn phép tính:</b></td>
@@ -52,11 +52,11 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td class="text-right" width='40%'><b class="text-primary">Số thứ hai:</b></td>
-                    <td><?php if(isset($_POST["B"])) echo $b ?></td>
+                    <td><?php echo $b ?></td>
                 </tr>
                 <tr>
                     <td class="text-right" width='40%'><b class="text-primary">Kết quả:</b></td>
-                    <td><?php if(isset($_POST["A"])) echo $result ?></td>
+                    <td><?php echo $result ?></td>
                 </tr>
                 <tr class="bg-success">
                     <td colspan="2" align='center'><a class="btn btn-default" href="javascript:window.history.back(-1);">Quay lại</a></td>
