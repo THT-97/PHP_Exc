@@ -41,7 +41,7 @@ and open the template in the editor.
                 </tr>
                 <tr class="bg-info">
                     <th class="text-center"><label>Năm:</label></th>
-                    <td><input class="form-control" name="year" type="number" value="<?php if(isset($_POST["year"])) echo $y ?>"/></td>
+                    <td><input class="form-control" name="year" type="number" min="1000" max="9999" value="<?php if(isset($_POST["year"])) echo $y ?>"/></td>
                 </tr>
                 <tr class="bg-info">
                     <td colspan="2">

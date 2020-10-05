@@ -37,7 +37,7 @@ and open the template in the editor.
                     <td class="text-primary">Năm âm lịch</td>
                 </tr>
                 <tr class="bg-info">
-                    <td class="text-primary"><input class="form-control" type="number" min="3" name="year" value="<?php if(isset($_GET["year"])) echo $y ?>"/></td>
+                    <td class="text-primary"><input class="form-control" type="number" min="100" max="9999" name="year" value="<?php if(isset($_GET["year"])) echo $y ?>"/></td>
                     <td><input class="btn btn-success" name="Submit" type="submit" value="=>" /></td>
                     <td class="text-primary"><input class="form-control text-warning" type="text" disabled="1" value="<?php if(isset($ly)) echo $ly ?>"/></td>
                 </tr>
