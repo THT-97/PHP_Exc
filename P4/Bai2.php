@@ -45,7 +45,7 @@ and open the template in the editor.
                     <td class="text-center" colspan="3">
                         <?php
                             if(isset($pic)){
-                                echo "<img alt='lunaryearpic' src='$pic' width='50%' height='50%' />";
+                                echo "<img alt='lunaryearpic' src='$pic' size='50%' />";
                             }
                         ?>
                     </td>

@@ -53,7 +53,7 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <textarea rows="15" cols="100">
+                        <textarea class="form-control" rows="15" cols="100">
                             <?php
                                 if(isset($result))echo $result;
                             ?>
