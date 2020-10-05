@@ -36,7 +36,7 @@ and open the template in the editor.
                 //Vị trí các số 0
                 $result .= "e. Các vị trí = 0: ";
                 $zero = [];
-                foreach ($a as $key => $value) if($value === 0) $zero[]=$key;
+                foreach ($a as $key => $value) if($value == 0) $zero[]=$key;
                 if(count($zero)>0) $result .= implode(",", $zero)."\n";
                 else $result .= "Không tìm thấy giá trị = 0 \n";
                 //Sắp xếp tăng dần
@@ -47,9 +47,9 @@ and open the template in the editor.
         <form action="" method="POST">
             <table class="table-condensed">
                 <tr>
-                    <td class="text-center">Nhập 1 số nguyên:</td>
+                    <td class="text-center">Nhập số phần tử của mảng:</td>
                     <td><input class="form-control" type="number" min="2" max="100" name="numN" value="<?php if(isset($_POST["numN"])) echo $n ?>"/></td>
-                    <td><input class="btn" type="submit" name="Submit" value="Tạo mảng"/></td>
+                    <td><input class="btn" type="submit" name="Submit" value="Xem kết quả"/></td>
                 </tr>
                 <tr>
                     <td colspan="3">
