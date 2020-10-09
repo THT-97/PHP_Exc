@@ -12,7 +12,23 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
+            function getSum($arr){
+                $s = 0;
+                foreach ($arr as $value) {
+                    if(is_numeric($value)){
+                       $s += $value;
+                    }
+                }
+                return $s;
+            }
+
+            $sum = "";
+            if(isset($_POST["submit"])){
+                $a = str_replace(" ", "", $_POST["arr"]);
+                $arr = explode(",", $a);
+                $sum = getSum($arr);
+            }
+
         ?>
         <form action="" method="POST">
             <table align="center" class="table-condensed">
@@ -28,10 +44,20 @@ and open the template in the editor.
                     <td><input class="form-control" name="arr" type="text" value="<?php if(isset($_POST["arr"])) echo $a ?>"/></td>
                     <td class="text-danger"><b>(*)</b></td>
                 </tr>
+                <tr class="bg-success text-center">
+                    <td colspan="3"><input class="btn btn-info col-8" name="submit" type="submit" value="Tổng dãy số"/></td>
+                </tr>
                 <tr class="bg-success">
-                    <td></td>
-                    <td><input class="form-control" name="arr" type="text" value="<?php if(isset($_POST["arr"])) echo $a ?>"/></td>
-                    <td></td>
+                    <th class="text-center">
+                        <label>Tổng dãy số:</label>
+                    </th>
+                    <td colspan="2"><input class="form-control" type="text" disabled="1" value="<?php echo $sum ?>"/></td>
+                </tr>
+                <tr class="bg-success text-center">
+                    <td colspan="3">
+                        <b class="text-danger">(*)</b>
+                        Các số được nhập cách nhau bằng dấu ","
+                    </td>
                 </tr>
             </table>
         </form>
