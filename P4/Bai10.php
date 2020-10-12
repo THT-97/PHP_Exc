@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -13,22 +12,23 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            $flowers = $_SESSION['flowers'];
-            
+            $flowers = [];
+            if(trim($_POST['cart'])!="") $flowers = explode(" -- ", trim($_POST['cart']));
+            $cart = "";
+            $warning="";
+            $f = "";
             function addToCart($flower){
                 global $flowers;
-                if(in_array($flower, $flowers)) return false;
-                $flowers[] = $flower;
-                return true;
+                global $warning;
+                if(in_array($flower, $flowers)) $warning = "Hoa đã có trong giỏ";
+                else if($flower!="") $flowers[] = $flower;
             }
 
-            $cart = "";
             if(isset($_POST['submit'])){
-                $f = $_POST['f'];
-                if($f!="" && !addToCart($f)) $cart = "Hoa đã có trong giỏ"."\n";
+                $f = trim($_POST['f']);
+                addToCart($f);
                 $cart .= implode(" -- ", $flowers);
             }
-            $_SESSION['flowers'] = $flowers;
         ?>
         <form action="" method="POST">
             <table align="center" class="table-condensed">
@@ -45,12 +45,13 @@ and open the template in the editor.
                 <tr class="bg-danger">
                     <th style="color:crimson">Giỏ hoa của bạn có:</th>
                     <td colspan="2">
-                        <textarea cols="50" rows="3">
-                            <?php echo $cart ?>
+                        <textarea name="cart" class="form-control" cols="50" rows="3">
+                            <?php if(isset($_POST['cart'])) echo $cart ?>
                         </textarea>
                     </td>
                 </tr>
             </table>
+            <p class="text-center text-danger"><?php echo $warning ?></p>
         </form>
     </body>
 </html>

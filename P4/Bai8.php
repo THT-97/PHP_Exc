@@ -61,20 +61,18 @@ and open the template in the editor.
 
             function readFromFile(&$a, &$asc, &$desc){
                 $f = fopen("dulieu_bai8.txt", "r") or exit("Not found");
-                $a = fgetss($f);
-                $asc = fgetss($f);
-                $desc = fgetss($f);
+                $a = fgets($f);
+                $asc = fgets($f);
+                $desc = fgets($f);
             }
             
             if(isset($_POST["submit"])){
                 $a = $_POST["arr"];
                 $arr = validateArray($a);
-                $a = implode(",", $arr);
-                writeFile($a, "w");
+                writeFile(implode(",", $arr), "w");
                 writeFile(implode(",", ascend($arr)), "a");
                 writeFile(implode(",", descend($arr)), "a");
                 readFromFile($a, $asc, $desc);
-                
             }
         ?>
         <form action="" method="POST">
