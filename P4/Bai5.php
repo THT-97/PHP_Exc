@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            $ar = "";
+            $a = "";
             $max = "";
             $min = "";
             $sum = "";

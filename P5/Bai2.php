@@ -16,8 +16,8 @@ and open the template in the editor.
 
                 private function UCLN()
                 {
-                    $x = $this->t;
-                    $y = $this->m;
+                    $x = abs($this->t);
+                    $y = abs($this->m);
                     
                     if($x%$y==0) return $y;
                     if($y%$x==0) return $x;
