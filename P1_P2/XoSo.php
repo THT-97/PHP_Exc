@@ -84,7 +84,7 @@
             echo "<br/><b style='color:green'>Ban trung giai 7</b><br/>";
         }
         
-        if($trung == false) echo "<br/>Trat cmnr";
+        if($trung == false) echo "<br/>Chuc ban may man lan sau";
     ?>
 </h4>
 
