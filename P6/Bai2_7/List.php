@@ -18,7 +18,7 @@
                 echo "<tr>";
                 while($arr = mysqli_fetch_array($result)){
                     echo "<td align='center'>"
-                    . "<a href='Details.php?id=$arr[Ma_Sua]'>$arr[Ten_Sua]</a></form><br/>";
+                    . "<a href='Details.php?id=$arr[Ma_Sua]'>$arr[Ten_Sua]</a><br/>";
                     echo "$arr[Trong_luong] gr - $arr[Don_gia] VNĐ</p>"
                     . "<img src='../images/$arr[Hinh]' width='150' height='150'/>";
                     echo "</td>";
