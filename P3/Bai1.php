@@ -12,7 +12,7 @@ and open the template in the editor.
     <body>
         <?php
             $area = 0;
-            if(isset($_POST["btbSubmit"])){
+            if(isset($_POST["submitp3b1"])){
                 $width = $_POST["nWidth"];
                 $length = $_POST["nLength"];
                 if (!is_numeric($width)) $width = 0;
@@ -29,18 +29,18 @@ and open the template in the editor.
                 </tr>
                 <tr bgcolor='yellow'>
                     <td align='center' width='50%'>Chiều dài: </td>
-                    <td><input type="number" min="0" name="nLength" value="<?php echo $length ?>"/></td>
+                    <td><input type="number" min="0" name="nLength" value="<?php if(isset($_POST["nLength"])) echo $length ?>"/></td>
                 </tr>
                 <tr bgcolor='yellow'>
                     <td align='center'>Chiều rộng: </td>
-                    <td><input type="number" min="0" name="nWidth" value="<?php echo $width ?>"/></td>
+                    <td><input type="number" min="0" name="nWidth" value="<?php if(isset($_POST["nWidth"])) echo $width ?>"/></td>
                 </tr>
                 <tr bgcolor='yellow'>
                     <td align='center'>Diện tích: </td>
                     <td><input type="text" name="nArea" value="<?php echo $area ?>" disabled="1"/></td>
                 </tr>
                 <tr bgcolor='yellow'>
-                    <td colspan="2" align='center'><input type="submit" name="btnSubmit" value="Tính"/></td>
+                    <td colspan="2" align='center'><input type="submit" name="submitp3b1" value="Tính"/></td>
                 </tr>
             </table>
         </form>

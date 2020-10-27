@@ -14,7 +14,7 @@ and open the template in the editor.
             $area = 0;
             $outline = 0;
             const PI = 3.14;
-            if(isset($_POST["btnSubmit"])){
+            if(isset($_POST["submitp3b2"])){
                 $radius = $_POST["nRadius"];
                 if(!is_numeric($radius)) $radius = 0;
                 $area = PI* pow($radius, 2);
@@ -41,7 +41,7 @@ and open the template in the editor.
                     <td><input type="text" name="nOutline" value="<?php echo $outline ?>" disabled="1"/></td>
                 </tr>
                 <tr bgcolor='yellow'>
-                    <td colspan="2" align='center'><input type="submit" name="btnSubmit" value="Tính"/></td>
+                    <td colspan="2" align='center'><input type="submit" name="submitp3b2" value="Tính"/></td>
                 </tr>
             </table>
         </form>

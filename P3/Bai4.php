@@ -8,13 +8,12 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Kết quả thi đại học</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
     </head>
     <body>
         <?php
             $total = "";
             $result = "";
-            if(isset($_POST["Submit"])){
+            if(isset($_POST["submitp3b4"])){
                 $math = $_POST["Math"];
                 $phys = $_POST["Phys"];
                 $chem = $_POST["Chem"];
@@ -28,8 +27,8 @@ and open the template in the editor.
                 }
             }
         ?>
-        <form action="" method="POST">
-            <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
+        <form action="#p3b4" method="POST" id="p3b4">
+            <table class="table-condensed col-6" align="center">
                 <tr bgcolor='purple'>
                     <th colspan="3" class="text-center">
                         <h2 style="color:white">KẾT QUẢ THI ĐẠI HỌC</h2>
@@ -90,7 +89,7 @@ and open the template in the editor.
                     <td></td>
                 </tr>
                 <tr bgcolor='pink'>
-                    <td colspan="3" align='center'><input class="btn btn-default" type="submit" name="Submit" value="Xem kết quả"/></td>
+                    <td colspan="3" align='center'><input class="btn btn-default" type="submit" name="submitp3b4" value="Xem kết quả"/></td>
                 </tr>
             </table>
         </form>

@@ -14,7 +14,7 @@ and open the template in the editor.
             $name = "";
             $cost = 0;
             $unit = 20000;
-            if(isset($_POST["btnSubmit"])){
+            if(isset($_POST["submitp3b3"])){
                 $name = $_POST["txtName"];
                 $old = $_POST["nOld"];
                 $new = $_POST["nNew"];
@@ -29,7 +29,7 @@ and open the template in the editor.
                 }
             }
         ?>
-        <form action="" method="POST">
+        <form action="#p3b3" method="POST" id="p3b3">
             <table style="border-collapse:collapse" width='30%'>
                 <tr bgcolor='orange'>
                     <th colspan="3" width='100%'>
@@ -62,7 +62,7 @@ and open the template in the editor.
                     <td>(VNĐ)</td>
                 </tr>
                 <tr bgcolor='yellow'>
-                    <td colspan="3" align='center'><input type="submit" name="btnSubmit" value="Tính"/></td>
+                    <td colspan="3" align='center'><input type="submit" name="submitp3b3" value="Tính"/></td>
                 </tr>
             </table>
         </form>

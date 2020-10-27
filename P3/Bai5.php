@@ -8,12 +8,11 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Tính tiền karaoke</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
     </head>
     <body>
         <?php
             $cost = "";
-            if(isset($_POST["Submit"])){
+            if(isset($_POST["submitp3b5"])){
                 $start = $_POST["Start"];
                 $end = $_POST["End"];
                 if ($start < $end) {
@@ -26,7 +25,7 @@ and open the template in the editor.
             }
         }
         ?>
-        <form action="" method="POST">
+        <form action="#p3b5" method="POST" id="p3b5">
             <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
                 <tr class="bg-primary">
                     <th colspan="3" class="text-center">
@@ -49,12 +48,12 @@ and open the template in the editor.
                     <td>(VNĐ)</td>
                 </tr>
                 <tr class="bg-info">
-                    <td colspan="3" align='center'><input class="btn btn-default" type="submit" name="Submit" value="Tính tiền"/></td>
+                    <td colspan="3" align='center'><input class="btn btn-default" type="submit" name="submitp3b5" value="Tính tiền"/></td>
                 </tr>
             </table>
             <p class='text-danger text-center'>
                 <?php
-                    if(isset($_POST["Submit"]))if($start>=$end) echo "Giờ kết thúc phải lớn hơn giờ bắt đầu";
+                    if(isset($_POST["submitp3b5"]))if($start>=$end) echo "Giờ kết thúc phải lớn hơn giờ bắt đầu";
                     else echo "";  
                 ?>
             </p>
