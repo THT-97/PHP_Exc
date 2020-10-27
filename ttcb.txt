@@ -1,0 +1,4 @@
+﻿1,sv001,Trần Văn An,Nam,Nha Trang,CNTT1,CNTT
+0,gv001,Nguyễn Thị Bình,Nữ,Đà Lạt,Tiến sĩ,2
+1,gv001,Nguyễn Thị Bình,Nữ,Đà Lạt,sdfsdf,CNTT
+0,gv001,Nguyễn Thị Bình,Nữ,Nha Trang,Cử nhân,2

@@ -17,7 +17,7 @@ and open the template in the editor.
                 $pname = $_POST['pname'];
                 $query = "SELECT *"
                         . " FROM sua, hang_sua"
-                        . " WHERE sua.Ma_hang_sua=hang_sua.Ma_hang_sua AND Ten_Sua LIKE'%$pname%'";
+                        . " WHERE sua.Ma_hang_sua=hang_sua.Ma_hang_sua AND Ten_Sua LIKE N'%$pname%'";
                 $result = mysqli_query($conn, $query);
             }
         ?>

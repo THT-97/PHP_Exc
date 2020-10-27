@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Tìm kiếm nâng cao</title>
         <link rel="stylesheet" href="../bootstrap.min.css" />
     </head>
     <body>
@@ -20,9 +20,9 @@ and open the template in the editor.
                 $query = "SELECT *"
                         . " FROM sua, hang_sua"
                         . " WHERE sua.Ma_hang_sua=hang_sua.Ma_hang_sua "
-                        . "AND Ten_Sua LIKE'%$pname%'";
-                if(isset($ptype)) $query .= " AND Ma_loai_sua = '$ptype'";
-                if(isset($pbrand)) $query .= " AND sua.Ma_hang_sua = '$pbrand'";
+                        . "AND Ten_Sua LIKE N'%$pname%'";
+                if($ptype!='') $query .= " AND Ma_loai_sua = '$ptype'";
+                if($pbrand!='') $query .= " AND sua.Ma_hang_sua = '$pbrand'";
                 $result = mysqli_query($conn, $query);
             }
         ?>
@@ -33,6 +33,7 @@ and open the template in the editor.
                     <th class="text-center">Loại sữa:</th>
                     <td class="text-center">
                         <select class="form-control" name="ptypes">
+                            <option value="">Tìm tất cả các loại</option>
                             <?php
                                 $types = mysqli_query($conn, "SELECT * FROM Loai_sua");
                                 while($tar = mysqli_fetch_array($types)){
@@ -46,6 +47,7 @@ and open the template in the editor.
                     <th class="text-center">Hãng sữa:</th>
                     <td class="text-center">
                         <select class="form-control" name="pbrands">
+                            <option value="">Tìm tất cả các hãng</option>
                             <?php
                                 $brands = mysqli_query($conn, "SELECT Ma_hang_sua, Ten_hang_sua FROM Hang_sua");
                                 while($bar = mysqli_fetch_array($brands)){
