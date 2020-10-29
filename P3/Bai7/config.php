@@ -8,7 +8,7 @@ and open the template in the editor.
     <?php $page_title="Config"; include ('../../Website/includes/headtag.html')?>
     <body style="font-size: 150%">
         <?php
-            include ('../../Website/includes/header.html');
+            include ('../../Website/includes/header.php');
             if(isset($_POST["Submit"])){
                 echo '<h3>Bạn đã nhập thành công, dưới đây là những thông tin bạn nhập:</h3>';
                 $name = $_POST["txtName"];

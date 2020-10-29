@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <?php $page_title="String & Array"; include ('includes/headtag.html')?>
     <body style="background-color: darkseagreen">
-        <?php include ('includes/header.html')?>
+        <?php include ('includes/header.php')?>
         <div style="margin-bottom: 5%; padding-left: 5%">
             <h1>String & Array</h1><hr/>
             <?php

@@ -10,7 +10,7 @@ and open the template in the editor.
         <?php $page_title ='Dò số'; include '../../Website/includes/headtag.html'; ?>
     </head>
     <body>
-        <?php include '../../Website/includes/header.html'; ?>
+        <?php include '../../Website/includes/header.php'; ?>
         <table class="table-condensed table-striped table-hover" align="center">
             <?php
                 $ve = $_GET["Ticket"];

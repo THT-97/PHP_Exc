@@ -14,9 +14,6 @@ legend {
   color: white;
   padding: 5px 10px;
 }
-input {
-  margin: 5px;
-}
 </style>
 </head>
 

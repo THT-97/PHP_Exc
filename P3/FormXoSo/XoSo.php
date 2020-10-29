@@ -8,7 +8,7 @@ and open the template in the editor.
 <html>
     <?php $page_title='Xổ số'; include '../../Website/includes/headtag.html'; ?>
     <body>
-        <?php include '../../Website/includes/header.html'; ?>
+        <?php include '../../Website/includes/header.php'; ?>
         <h3 class="text-uppercase text-primary" align="center">
             Kết quả xổ số Khánh Hòa Ngày
             <?php echo date("d/m/Y");?>

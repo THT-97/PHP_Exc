@@ -21,7 +21,7 @@ and open the template in the editor.
                 case 4: if($b!=0) $result = $a / $b; else $result = "Không thể chia"; break;
             }
             
-            include ('../../Website/includes/header.html')
+            include ('../../Website/includes/header.php')
         ?>
         <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
                 <tr>

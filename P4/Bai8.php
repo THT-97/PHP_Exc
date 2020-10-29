@@ -70,7 +70,7 @@ and open the template in the editor.
                 writeFile(implode(",", descend($arr)), "a");
                 readFromFile($a, $asc, $desc);
             }
-            include '../Website/includes/header.html';
+            include '../Website/includes/header.php';
         ?>
         <form action="" method="POST">
             <table align="center" class="table-condensed">

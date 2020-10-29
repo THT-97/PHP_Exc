@@ -9,7 +9,7 @@ and open the template in the editor.
     <body>
         <?php 
             require_once 'NhanVien.php';
-            include ('../../Website/includes/header.html');
+            include ('../../Website/includes/header.php');
         ?>
         <form action="#p5b1" method="POST" id="p5b1">
             <h1 class="text-center text-uppercase">quản lý nhân viên</h1>

@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <?php $page_title="Form"; include ('../../Website/includes/headtag.html')?>
     <body style="font-size: 150%">
-        <?php include ('../../Website/includes/header.html')?>
+        <?php include ('../../Website/includes/header.php')?>
         <form action="config.php" method="POST">
             <fieldset>
                 <legend><b>Enter your information</b></legend>

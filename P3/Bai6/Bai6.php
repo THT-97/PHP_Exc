@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <?php $page_title="Phép tính trên hai số"; include ('../../Website/includes/headtag.html')?>
     <body>
-        <?php include ('../../Website/includes/header.html')?>
+        <?php include ('../../Website/includes/header.php')?>
         <form action="Bai6xl.php" method="POST">
             <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
                 <tr>
