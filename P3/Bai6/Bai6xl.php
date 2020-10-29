@@ -5,11 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Phép tính trên hai số</title>
-        <link rel="stylesheet" href="../../bootstrap.min.css"/>
-    </head>
+     <?php $page_title="Phép tính trên hai số"; include ('../../Website/includes/headtag.html')?>
     <body>
         <?php
             $a = $_POST["A"];
@@ -24,6 +20,8 @@ and open the template in the editor.
                 case 3: $result = $a * $b; break;
                 case 4: if($b!=0) $result = $a / $b; else $result = "Không thể chia"; break;
             }
+            
+            include ('../../Website/includes/header.html')
         ?>
         <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
                 <tr>
@@ -62,5 +60,6 @@ and open the template in the editor.
                     <td colspan="2" align='center'><a class="btn btn-default" href="javascript:window.history.back(-1);">Quay lại</a></td>
                 </tr>
             </table>
+         <?php include ('../../Website/includes/footer.html')?>
     </body>
 </html>

@@ -12,25 +12,24 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            function getSum($arr){
-                $s = 0;
-                foreach ($arr as $value) {
-                    if(is_numeric($value)){
-                       $s += $value;
-                    }
-                }
-                return $s;
-            }
-
             $sum = "";
-            if(isset($_POST["submit"])){
+            if(isset($_POST["submitp4b4"])){
+                function getSum($arr){
+                    $s = 0;
+                    foreach ($arr as $value) {
+                        if(is_numeric($value)){
+                           $s += $value;
+                        }
+                    }
+                    return $s;
+                }
                 $a = str_replace(" ", "", $_POST["arr"]);
                 $arr = explode(",", $a);
                 $sum = getSum($arr);
             }
 
         ?>
-        <form action="" method="POST">
+        <form action="#p4b4" method="POST" id="p4b4">
             <table align="center" class="table-condensed">
                 <tr class="bg-primary">
                     <th class="text-center" colspan="3" style="color: white;">
@@ -45,7 +44,7 @@ and open the template in the editor.
                     <td class="text-danger"><b>(*)</b></td>
                 </tr>
                 <tr class="bg-success text-center">
-                    <td colspan="3"><input class="btn btn-info col-8" name="submit" type="submit" value="Tổng dãy số"/></td>
+                    <td colspan="3"><input class="btn btn-info col-8" name="submitp4b4" type="submit" value="Tổng dãy số"/></td>
                 </tr>
                 <tr class="bg-success">
                     <th class="text-center">

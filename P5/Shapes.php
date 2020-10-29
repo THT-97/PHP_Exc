@@ -22,7 +22,9 @@ input {
 
 <body>
 <?php 
-abstract class Hinh{
+$str=NULL;
+if(isset($_POST['tinh'])){
+    abstract class Hinh{
 	protected $ten, $dodai;
 	public function setTen($ten){
 		$this->ten=$ten;
@@ -38,38 +40,35 @@ abstract class Hinh{
 	}
 	abstract public function tinh_CV();
 	abstract public function tinh_DT();
-}
+    }
 
-class HinhTron extends Hinh{
-	const PI=3.14;
-	function tinh_CV(){
-		return $this->dodai*2*self::PI;
-	}
-	function tinh_DT(){
-		return pow($this->dodai,2)*self::PI;
-	}
-}
+    class HinhTron extends Hinh{
+            const PI=3.14;
+            function tinh_CV(){
+                    return $this->dodai*2*self::PI;
+            }
+            function tinh_DT(){
+                    return pow($this->dodai,2)*self::PI;
+            }
+    }
 
-class HinhVuong extends Hinh{
-	public function tinh_CV(){
-		return $this->dodai*4;
-	}
-	public function tinh_DT(){
-		return pow($this->dodai,2);
-	}
-}
+    class HinhVuong extends Hinh{
+            public function tinh_CV(){
+                    return $this->dodai*4;
+            }
+            public function tinh_DT(){
+                    return pow($this->dodai,2);
+            }
+    }
 
-class HinhTamGiacDeu extends Hinh{
-	public function tinh_CV(){
-		return $this->dodai*3;
-	}
-	public function tinh_DT(){
-		return round(sqrt(3)*pow($this->dodai,2)/4, 2);
-	}
-}
-
-$str=NULL;
-if(isset($_POST['tinh'])){
+    class HinhTamGiacDeu extends Hinh{
+            public function tinh_CV(){
+                    return $this->dodai*3;
+            }
+            public function tinh_DT(){
+                    return round(sqrt(3)*pow($this->dodai,2)/4, 2);
+            }
+    }
 	if(isset($_POST['hinh']) && ($_POST["dodai"]>0)){
             if(($_POST['hinh'])=="hv"){
                 $hv=new HinhVuong();
@@ -96,11 +95,11 @@ if(isset($_POST['tinh'])){
         else $str = "Nhập số dương";
 }
 ?>
-<form action="" method="post">
-<fieldset>
-	<legend>Tính chu vi và diện tích các hình học đơn giản</legend>
-	<table border='0'>
-		<tr>
+    <form action="#shapes" method="post" id="shapes">
+        <fieldset class="col-6">
+            <legend class="col-9">Tính chu vi và diện tích các hình học đơn giản</legend>
+            <table border='0'>
+                <tr>
                     <td>Chọn hình</td>
                     <td>
                         <input type="radio" name="hinh" value="hv" <?php if(isset($_POST['hinh'])&&($_POST['hinh'])=="hv") echo 'checked="checked"'?>/>Hình vuông
@@ -108,13 +107,14 @@ if(isset($_POST['tinh'])){
                         <input type="radio" name="hinh" value="htg"<?php if(isset($_POST['hinh'])&&($_POST['hinh'])=="htg") echo 'checked="checked"'?>/>Hình tam giác đều
                     </td>
                 </tr>
-		<tr><td>Nhập tên:</td><td><input type="text"  name="ten" value="<?php if(isset($_POST['ten'])) echo $_POST['ten'];?>"/></td></tr>
+                <tr><td>Nhập tên:</td><td><input type="text"  name="ten" value="<?php if(isset($_POST['ten'])) echo $_POST['ten'];?>"/></td></tr>
                 <tr><td>Nhập độ dài:</td><td><input type="number" name="dodai" value="<?php if(isset($_POST['dodai'])) echo $_POST['dodai'];?>"/></td></tr>
-		<tr><td>Kết quả:</td>
-			<td><textarea name="ketqua" cols="70" rows="4" disabled="disabled"><?php echo $str;?></textarea></td></tr>
-		<tr><td colspan="2" align="center"><input type="submit" name="tinh" value="TÍNH"/></td></tr>
-	</table>
-</fieldset>
-</form>
+                <tr>
+                    <td>Kết quả:</td>
+                    <td><textarea name="ketqua" cols="70" rows="4" disabled="disabled"><?php echo $str;?></textarea></td></tr>
+                   <tr><td colspan="2" align="center"><input type="submit" name="tinh" value="TÍNH"/></td></tr>
+            </table>
+        </fieldset>
+    </form>
 </body>
 </html>

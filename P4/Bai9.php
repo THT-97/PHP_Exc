@@ -13,13 +13,13 @@ and open the template in the editor.
     <body>
         <?php
             $c = [];
-            if(isset($_POST["submit"])){
+            if(isset($_POST["submitp4b9"])){
                 $a = explode(",", $_POST["arr1"]);
                 $b = explode(",", $_POST["arr2"]);
                 $c = array_merge($a, $b);
             }
         ?>
-        <form action="" method="POST">
+        <form action="#p4b9" method="POST" id="p4b9">
             <table align="center" class="table-condensed">
                 <tr bgcolor='purple'>
                     <th class="text-center" colspan="3" style="color: white;">
@@ -36,7 +36,7 @@ and open the template in the editor.
                 </tr>
                 <tr bgcolor="pink" class="text-center">
                     <td></td>
-                    <td class="text-left"><input class="btn btn-warning" name="submit" type="submit" value="Thực hiện"/></td>
+                    <td class="text-left"><input class="btn btn-warning" name="submitp4b9" type="submit" value="Thực hiện"/></td>
                 </tr>
                 <tr class="bg-danger">
                     <th>Số phần tử mảng A:</th>
@@ -58,9 +58,10 @@ and open the template in the editor.
                     <th>Mảng C giảm dần:</th>
                     <td><input class="form-control" type="text" disabled="1" value="<?php if(rsort($c)) echo implode(",", $c) ?>"/></td>
                 </tr>
-                <tr class="bg-danger text-center">
+                <tr class="bg-warning text-center">
                     <td colspan="2">(<b style="color: red">Ghi chú:</b> Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</td>
                 </tr>
             </table>
+        </form>
     </body>
 </html>

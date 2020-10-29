@@ -6,12 +6,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Xổ Số Kiến Thiết</title>
-        <link rel="stylesheet" href="../../bootstrap.css"/>
-    </head>
+    <?php $page_title='Xổ số'; include '../../Website/includes/headtag.html'; ?>
     <body>
+        <?php include '../../Website/includes/header.html'; ?>
         <h3 class="text-uppercase text-primary" align="center">
             Kết quả xổ số Khánh Hòa Ngày
             <?php echo date("d/m/Y");?>
@@ -90,5 +87,6 @@ and open the template in the editor.
             </div>
             <input class="btn btn-warning text-uppercase" name="Submit" type="submit" value="Dò số"/>
         </form>
+        <?php include '../../Website/includes/footer.html'; ?>
     </body>
 </html>

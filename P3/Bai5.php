@@ -48,7 +48,7 @@ and open the template in the editor.
                     <td>(VNĐ)</td>
                 </tr>
                 <tr class="bg-info">
-                    <td colspan="3" align='center'><input class="btn btn-default" type="submit" name="submitp3b5" value="Tính tiền"/></td>
+                    <td colspan="3" align='center'><input class="btn btn-light" type="submit" name="submitp3b5" value="Tính tiền"/></td>
                 </tr>
             </table>
             <p class='text-danger text-center'>

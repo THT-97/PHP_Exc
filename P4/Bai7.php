@@ -13,14 +13,14 @@ and open the template in the editor.
     <body>
         <?php
             $a = '';
-            $result = '';
-            
-            function replace($arr, $target, $value){
-                for ($i = 0; $i < count($arr); $i++) if($arr[$i]==$target)$arr[$i] = $value;
-                return implode(",", $arr);
-            }
+            $result = ''; 
 
-            if(isset($_POST["submit"])){
+            if(isset($_POST["submitp4b7"])){
+                function replace($arr, $target, $value){
+                    for ($i = 0; $i < count($arr); $i++) if($arr[$i]==$target)$arr[$i] = $value;
+                    return implode(",", $arr);
+                }
+                
                 $a = str_replace(" ", "", $_POST["arr"]);
                 $n = $_POST['n'];
                 $x = $_POST['x'];
@@ -30,7 +30,7 @@ and open the template in the editor.
                 $result = replace($arr, $n, $x);
             }
         ?>
-        <form action="" method="POST">
+        <form action="#p4b7" method="POST" id="p4b7">
             <table align="center" class="table-condensed">
                 <tr bgcolor='purple'>
                     <th class="text-center" colspan="3" style="color: white;">
@@ -51,7 +51,7 @@ and open the template in the editor.
                 </tr>
                 <tr class="bg-danger text-center">
                     <td></td>
-                    <td class="text-left"><input class="btn btn-warning" name="submit" type="submit" value="Thay thế"/></td>
+                    <td class="text-left"><input class="btn btn-warning" name="submitp4b7" type="submit" value="Thay thế"/></td>
                 </tr>
                 <tr>
                     <th>Mảng cũ:</th>

@@ -89,7 +89,7 @@ and open the template in the editor.
                     <td></td>
                 </tr>
                 <tr bgcolor='pink'>
-                    <td colspan="3" align='center'><input class="btn btn-default" type="submit" name="submitp3b4" value="Xem kết quả"/></td>
+                    <td colspan="3" align='center'><input class="btn btn-light" type="submit" name="submitp3b4" value="Xem kết quả"/></td>
                 </tr>
             </table>
         </form>

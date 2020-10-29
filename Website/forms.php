@@ -21,9 +21,14 @@ and open the template in the editor.
                 echo '<hr/>';
                 include '../P3/Bai5.php';
             ?>
-            <a style="color: darkgreen" href="../P3/Bai6/Bai6.php"><h3>Phép tính trên hai số</h3</a>
-            <a style="color: darkgreen" href="../P3/Bai7/form.php"><h3>Form - Config</h3</a>
-            <a style="color: darkgreen" href="../P3/FormXoSo/XoSo.php"><h3>Xổ Số Kiến Thiết</h3</a>
+            <hr/>
+            <h3>
+                <b>
+                    <a style="color: darkgreen" href="../P3/Bai6/Bai6.php">Phép tính trên hai số</a><hr/>
+                    <a style="color: darkgreen" href="../P3/Bai7/form.php">Form - Config</a><hr/>
+                    <a style="color: darkgreen" href="../P3/FormXoSo/XoSo.php">Xổ Số Kiến Thiết</a>
+                </b>
+            </h3>
         </div>
         <?php include ('includes/footer.html')?>
     </body>

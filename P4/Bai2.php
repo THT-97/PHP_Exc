@@ -17,7 +17,7 @@ and open the template in the editor.
             $can = ["Quý","Giáp","Ất","Bính","Đinh","Mậu","Kỷ","Canh","Tân","Nhâm"];
             $chi = ["Hợi","Tí","Sửu","Dần","Mẹo","Thìn","Tỵ","Ngọ","Mùi","Thân","Dậu","Tuất"];
             $icon = ["hoi.jpg","chuot.jpg","suu.jpg","dan.jpg","meo.jpg","thin.jpg","ty.jpg","ngo.jpg","mui.jpg","than.jpg","dau.jpg","tuat.jpg"];
-            if(isset($_GET["Submit"])){
+            if(isset($_GET["submitp4b2"])){
                 $y = $_GET["year"];
                 if($y!=""){
                     $pic = ($y-3)%12;
@@ -26,7 +26,7 @@ and open the template in the editor.
                 }
             }
         ?>
-        <form action="" method="GET">
+        <form action="#p4b2" method="GET" id="p4b2">
             <table align="center" class="table-condensed">
                 <tr class="bg-primary">
                     <th class="text-center" colspan="3" style="color: white;"><h3 style="font-family:'Comic Sans MS'">TÍNH NĂM ÂM LỊCH</h3></th>
@@ -38,7 +38,7 @@ and open the template in the editor.
                 </tr>
                 <tr class="bg-info">
                     <td class="text-primary"><input class="form-control" type="number" min="100" max="9999" name="year" value="<?php if(isset($_GET["year"])) echo $y ?>"/></td>
-                    <td><input class="btn btn-success" name="Submit" type="submit" value="=>" /></td>
+                    <td><input class="btn btn-success" name="submitp4b2" type="submit" value="=>" /></td>
                     <td class="text-primary"><input class="form-control text-warning" type="text" disabled="1" value="<?php if(isset($ly)) echo $ly ?>"/></td>
                 </tr>
                 <tr class="bg-info">

@@ -5,12 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
+    <?php $page_title="Config"; include ('../../Website/includes/headtag.html')?>
     <body style="font-size: 150%">
         <?php
+            include ('../../Website/includes/header.html');
             if(isset($_POST["Submit"])){
                 echo '<h3>Bạn đã nhập thành công, dưới đây là những thông tin bạn nhập:</h3>';
                 $name = $_POST["txtName"];
@@ -59,6 +57,7 @@ and open the template in the editor.
             }
         ?>
         <br/>
-        <a class="btn btn-default" href="javascript:window.history.back(-1);">Quay lại</a>
+        <a class="btn btn-warning" href="javascript:window.history.back(-1);">Quay lại</a>
+        <?php include ('../../Website/includes/footer.html')?>
     </body>
 </html>

@@ -5,12 +5,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Phép tính trên hai số</title>
-        <link rel="stylesheet" href="../../bootstrap.min.css"/>
-    </head>
+    <?php $page_title="Phép tính trên hai số"; include ('../../Website/includes/headtag.html')?>
     <body>
+        <?php include ('../../Website/includes/header.html')?>
         <form action="Bai6xl.php" method="POST">
             <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
                 <tr>
@@ -45,5 +42,7 @@ and open the template in the editor.
                     <td colspan="2" align='center'><input class="btn btn-default" type="submit" name="Submit" value="Tính"/></td>
                 </tr>
             </table>
+        </form>
+            <?php include ('../../Website/includes/footer.html')?>
     </body>
 </html>

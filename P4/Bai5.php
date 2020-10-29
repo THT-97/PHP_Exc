@@ -16,42 +16,43 @@ and open the template in the editor.
             $max = "";
             $min = "";
             $sum = "";
-            //create array
-            function generateArray($size){
-                $array = [];
-                for ($i = 0; $i < $size; $i++) {
-                    $array[$i] = rand(0,20);
-                }
-                return $array;
-            }
-            //array to string
-            function arrayToString($ar){
-                return implode(" ", $ar);
-            }
-            //find max
-            function getMax($ar){
-                $max = null;
-                for ($i = 0; $i < count($ar); $i++) if($max==null or $ar[$i]>$max) $max = $ar[$i];
-                return $max;
-            }
-            //find min
-            function getMin($ar){
-                $min = null;
-                for ($i = 0; $i < count($ar); $i++) if($min==null or $ar[$i]<$min) $min = $ar[$i];
-                return $min;
-            }
-            //sum array
-            function getSum($ar){
-                $s = 0;
-                foreach ($ar as $value) {
-                    if(is_numeric($value)){
-                       $s += $value;
-                    }
-                }
-                return $s;
-            }
             
-            if(isset($_POST['submit'])){
+            if(isset($_POST['submitp4b5'])){
+                //create array
+                function generateArray($size){
+                    $array = [];
+                    for ($i = 0; $i < $size; $i++) {
+                        $array[$i] = rand(0,20);
+                    }
+                    return $array;
+                }
+                //array to string
+                function arrayToString($ar){
+                    return implode(" ", $ar);
+                }
+                //find max
+                function getMax($ar){
+                    $max = null;
+                    for ($i = 0; $i < count($ar); $i++) if($max==null or $ar[$i]>$max) $max = $ar[$i];
+                    return $max;
+                }
+                //find min
+                function getMin($ar){
+                    $min = null;
+                    for ($i = 0; $i < count($ar); $i++) if($min==null or $ar[$i]<$min) $min = $ar[$i];
+                    return $min;
+                }
+                //sum array
+                function getSum($ar){
+                    $s = 0;
+                    foreach ($ar as $value) {
+                        if(is_numeric($value)){
+                           $s += $value;
+                        }
+                    }
+                    return $s;
+                }
+            
                 $n = $_POST['n'];
                 $ar = generateArray($n);
                 $a = arrayToString($ar);
@@ -60,7 +61,7 @@ and open the template in the editor.
                 $sum = getSum($ar);
             }
         ?>
-        <form action="" method="POST">
+        <form action="#p4b5" method="POST" id="p4b5">
             <table align="center" class="table-condensed">
                 <tr bgcolor="purple">
                     <th class="text-center" colspan="2" style="color: white;">
@@ -73,7 +74,7 @@ and open the template in the editor.
                 </tr>
                 <tr class="bg-danger text-center">
                     <td></td>
-                    <td class="text-left"><input class="btn btn-warning col-8" name="submit" type="submit" value="Phát sinh và tính toán"/></td>
+                    <td class="text-left"><input class="btn btn-warning col-8" name="submitp4b5" type="submit" value="Phát sinh và tính toán"/></td>
                 </tr>
                 <tr>
                     <th>Mảng:</th>

@@ -5,16 +5,13 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Quản lý nhân viên</title>
-        <link rel="stylesheet" href="../../bootstrap.min.css"/>
-    </head>
+    <?php $page_title ='Quản lý nhân viên'; include '../../Website/includes/headtag.html'; ?>
     <body>
-        <?php
+        <?php 
             require_once 'NhanVien.php';
+            include ('../../Website/includes/header.html');
         ?>
-        <form action="FormNV.php" method="POST">
+        <form action="#p5b1" method="POST" id="p5b1">
             <h1 class="text-center text-uppercase">quản lý nhân viên</h1>
             <table align="center" class="table-condensed bg-warning">
                 <tr>
@@ -64,19 +61,19 @@ and open the template in the editor.
                     <td></td>
                 </tr>
             </table>
-            <p class="text-center"><input class="btn btn-default" name="submit" type="submit" value="Tính lương"/></p>
+            <p class="text-center"><input class="btn btn-success" name="submitp5b1" type="submit" value="Tính lương"/></p>
             <table align="center" class="table-condensed bg-warning">
                 <tr>
                     <td>Tiền lương:</td>
-                    <td><input class="form-control" size="30%" type="text" disabled="1" value="<?php if(isset($_POST['submit'])) echo $nv->TinhLuong()." VNĐ" ?>"/></td>
+                    <td><input class="form-control" size="30%" type="text" disabled="1" value="<?php if(isset($_POST['submitp5b1'])) echo $nv->TinhLuong()." VNĐ" ?>"/></td>
                     <td>Tiền trợ cấp:</td>
-                    <td><input class="form-control" size="30%" type="text" disabled="1" value="<?php if(isset($_POST['submit'])) echo $nv->TroCap()." VNĐ" ?>"/></td>
+                    <td><input class="form-control" size="30%" type="text" disabled="1" value="<?php if(isset($_POST['submitp5b1'])) echo $nv->TroCap()." VNĐ" ?>"/></td>
                 </tr>
                 <tr>
                     <td>Tiền thưởng:</td>
-                    <td><input class="form-control" size="30%" type="text" disabled="1" value="<?php if(isset($_POST['submit'])) echo $nv->Thuong()." VNĐ" ?>"/></td>
+                    <td><input class="form-control" size="30%" type="text" disabled="1" value="<?php if(isset($_POST['submitp5b1'])) echo $nv->Thuong()." VNĐ" ?>"/></td>
                     <td>Tiền phạt:</td>
-                    <td><input class="form-control" size="30%" type="text" disabled="1" value="<?php if(isset($_POST['submit'])&&($dep==0)) echo $nv->Phat()." VNĐ" ?>"/></td>
+                    <td><input class="form-control" size="30%" type="text" disabled="1" value="<?php if(isset($_POST['submitp5b1'])&&($dep==0)) echo $nv->Phat()." VNĐ" ?>"/></td>
                 </tr>
                 <tr>
                     <td class="form-inline text-center" colspan="4">
@@ -86,5 +83,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include ('../../Website/includes/footer.html')?>
     </body>
 </html>

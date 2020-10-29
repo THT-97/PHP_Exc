@@ -5,11 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Sắp xếp mảng</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
+    <?php $page_title ='Sắp xếp mảng'; include '../Website/includes/headtag.html'; ?>
     <body>
         <?php
             $asc = "";
@@ -32,7 +28,7 @@ and open the template in the editor.
                 for ($min = 0; $min < count($result)-1; $min++) {
                     $flag = $min;
                     for ($i = $min+1; $i < count($result); $i++) {
-                        if($result[$i] < $result[$flag]) $flag = $i;
+                        if(isset($result[$i]) && $result[$i] < $result[$flag]) $flag = $i;
                     }
                     if($flag != $min) swap($result[$min],$result[$flag]);
                 }
@@ -44,7 +40,7 @@ and open the template in the editor.
                 for ($min = 0; $min < count($result)-1; $min++) {
                     $flag = $min;
                     for ($i = $min+1; $i < count($result); $i++) {
-                        if($result[$i] > $result[$flag]) $flag = $i;
+                        if(isset($result[$i]) && $result[$i] > $result[$flag]) $flag = $i;
                     }
                     if($flag != $min) swap($result[$min],$result[$flag]);
                 }
@@ -74,6 +70,7 @@ and open the template in the editor.
                 writeFile(implode(",", descend($arr)), "a");
                 readFromFile($a, $asc, $desc);
             }
+            include '../Website/includes/header.html';
         ?>
         <form action="" method="POST">
             <table align="center" class="table-condensed">
@@ -112,5 +109,7 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
+        </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

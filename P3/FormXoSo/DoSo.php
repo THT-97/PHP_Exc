@@ -7,11 +7,10 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Kết quả dò số</title>
-        <link rel="stylesheet" href="../../bootstrap.css"/>
+        <?php $page_title ='Dò số'; include '../../Website/includes/headtag.html'; ?>
     </head>
     <body>
+        <?php include '../../Website/includes/header.html'; ?>
         <table class="table-condensed table-striped table-hover" align="center">
             <?php
                 $ve = $_GET["Ticket"];
@@ -120,5 +119,6 @@ and open the template in the editor.
             </b><br/>
             <a class="btn btn-warning" href="javascript:window.history.back(-1);">Quay lại</a>
         </div>
+        <?php include '../../Website/includes/footer.html'; ?>
     </body>
 </html>

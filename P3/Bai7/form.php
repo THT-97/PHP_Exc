@@ -5,15 +5,13 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Form</title>
-    </head>
+    <?php $page_title="Form"; include ('../../Website/includes/headtag.html')?>
     <body style="font-size: 150%">
+        <?php include ('../../Website/includes/header.html')?>
         <form action="config.php" method="POST">
             <fieldset>
                 <legend><b>Enter your information</b></legend>
-                <table border="1" width="50%">
+                <table border="1">
                     <tr>
                         <td>Họ tên:</td>
                         <td><input size="100%" name="txtName" type="text" value="<?php if(isset($_POST["txtName"]))echo "$name" ?>"/></td>
@@ -69,5 +67,6 @@ and open the template in the editor.
                 </table>
             </fieldset>
         </form>
+        <?php include ('../../Website/includes/footer.html')?>
     </body>
 </html>

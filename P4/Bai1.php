@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            if(isset($_POST["Submit"])){
+            if(isset($_POST["submitp4b1"])){
                 $n = $_POST["numN"];
                 if($n=='') $n = 2;
                 //Tạo mảng
@@ -44,12 +44,13 @@ and open the template in the editor.
                 $result .="f: Mảng tăng dần: " .implode(" ", $a);
             }
         ?>
-        <form action="" method="POST">
+        <form action="#p4b1" method="POST" id="p4b1">
+            <h2>Mảng ngẫu nhiên</h2>
             <table class="table-condensed">
                 <tr>
                     <td class="text-center">Nhập số phần tử của mảng:</td>
                     <td><input class="form-control" type="number" min="2" max="100" name="numN" value="<?php if(isset($_POST["numN"])) echo $n ?>"/></td>
-                    <td><input class="btn" type="submit" name="Submit" value="Xem kết quả"/></td>
+                    <td><input class="btn btn-info" type="submit" name="submitp4b1" value="Xem kết quả"/></td>
                 </tr>
                 <tr>
                     <td colspan="3">
