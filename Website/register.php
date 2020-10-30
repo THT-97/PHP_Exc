@@ -39,12 +39,7 @@
                 }
                 else $pic = 'defaultpic.png';
                 
-                if ($usn == '') {
-                    $usnw = 'Nhập Username';
-                    $usn = 'user';
-                    $valid = false;
-                }
-                else {
+                if ($usn != '') {
                     $rn = mysqli_query($conn, "SELECT userName FROM user WHERE userName='$usn'");
                     if (mysqli_num_rows($rn) > 0){
                         $usnw = 'Username trùng';
@@ -52,24 +47,7 @@
                     }
                 }
                 
-                if ($pass == '') {
-                    $pasw = 'Nhập Password';
-                    $valid = false;
-                }
-                if ($name == '') {
-                    $namew = 'Nhập Họ tên';
-                    $valid = false;
-                }
-                if ($dob == '') {
-                    $dobw = 'Nhập Ngày sinh';
-                    $valid = false;
-                }
-                
-                if ($mail == '') {
-                    $mailw = 'Nhập Email';
-                    $valid = false;
-                }
-                else {
+                if ($mail != '') {
                     $rn = mysqli_query($conn, "SELECT userName FROM user WHERE email='$mail'");
                     if (mysqli_num_rows($rn) > 0){
                         $mailw = 'Email trùng';
@@ -77,11 +55,7 @@
                     }
                 }
                 
-                if ($phone == '') {
-                    $cellw = 'Nhập Số điện thoại';
-                    $valid = false;
-                }
-                else {
+                if ($phone != '') {
                     $rn = mysqli_query($conn, "SELECT userName FROM user WHERE phone='$phone'");
                     if (mysqli_num_rows($rn) > 0){
                         $cellw = 'Số điện thoại trùng';
@@ -103,18 +77,18 @@
             <table align="center" class="table-condensed">
                 <tr>
                     <td>Username:</td>
-                    <td><input class="form-control" type="text" minlength="4" name="usn" value="<?php if(isset($_POST['usn'])) echo $usn; else echo 'user'; ?>"/></td>
+                    <td><input class="form-control" type="text" minlength="4" name="usn" value="<?php if(isset($_POST['usn'])) echo $usn; else echo 'user'; ?>" required/></td>
                     <th class="text-danger"><?php if(isset($usnw)) echo $usnw ?></th>
                 </tr>
                 <tr>
                     <td>Password:</td>
-                    <td><input class="form-control" type="password" minlength="6" name="pass" value="<?php if(isset($_POST['pass'])) echo $pass ?>"/></td>
+                    <td><input class="form-control" type="password" minlength="6" name="pass" value="<?php if(isset($_POST['pass'])) echo $pass ?>" required/></td>
                     <th class="text-danger"><?php if(isset($pasw)) echo $pasw ?></th>
                 </tr>
                 <tr>
                     <td>Họ tên:</td>
-                    <td><input class="form-control" type="text" minlength="1" name="name" value="<?php if(isset($_POST['name'])) echo $name ?>"/></td>
-                    <th class="text-danger"><?php if(isset($namew)) echo $namew ?></th>                 
+                    <td><input class="form-control" type="text" minlength="5" name="name" value="<?php if(isset($_POST['name'])) echo $name ?>" required/></td>
+                    <th class="text-danger"><?php if(isset($namew)) echo $namew ?></th>
                 </tr>
                 <tr>
                     <td>Giới tính:</td>
@@ -126,17 +100,17 @@
                 </tr>
                 <tr>
                     <td>Ngày sinh:</td>
-                    <td><input class="form-control" type="date" name="dob" value="<?php if(isset($_POST['dob'])) echo $dob ?>"/></td>
+                    <td><input class="form-control" type="date" name="dob" value="<?php if(isset($_POST['dob'])) echo $dob ?>" required/></td>
                     <th class="text-danger"><?php if(isset($dobw)) echo $dobw ?></th>
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td><input class="form-control" type="email" name="mail" value="<?php if(isset($_POST['mail'])) echo $mail ?>"/></td>
+                    <td><input class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="mail" minlength="11" value="<?php if(isset($_POST['mail'])) echo $mail ?>" required/></td>
                     <th class="text-danger"><?php if(isset($mailw)) echo $mailw ?></th>
                 </tr>
                 <tr>
                     <td>Số điện thoại:</td>
-                    <td><input class="form-control" type="tel" minlength="10" maxlength="11" name="phone" value="<?php if(isset($_POST['phone'])) echo $phone ?>"/></td>
+                    <td><input class="form-control" type="tel" pattern="[0-9]+" minlength="10" maxlength="11" name="phone" value="<?php if(isset($_POST['phone'])) echo $phone ?>" required/></td>
                     <th class="text-danger"><?php if(isset($cellw)) echo $cellw ?></th>
                 </tr>
                 <tr>

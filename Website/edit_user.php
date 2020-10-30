@@ -1,5 +1,5 @@
 <html>
-    <?php $page_title='Edit profile'; include ('includes/headtag.html')?>
+    <?php $page_title='Edit user'; include ('includes/headtag.html')?>
     <body style="background-color: darkseagreen">
         <?php 
             include ('includes/header.php');

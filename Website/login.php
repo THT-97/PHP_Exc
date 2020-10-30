@@ -28,18 +28,18 @@ and open the template in the editor.
                     $_SESSION['cRole'] = $acc['type'];
                     header("Location:index.php");
                 }
-                else $warning = 'Incorrect username or password';
+                else $warning = 'Username hoặc Password không đúng';
             }
         ?>
         <form action="" method="POST">
             <table align='center' class="table-condensed">
                 <tr>
                     <th>Username</th>
-                    <td><input class="form-control" type="text" name="user" value="<?php if(isset($_POST['user'])) echo $user; else echo 'user' ?>"/></td>
+                    <td><input class="form-control" type="text" name="user" value="<?php if(isset($_POST['user'])) echo $user; else echo 'user' ?>" required/></td>
                 </tr>
                 <tr>
                     <th>Password</th>
-                    <td><input class="form-control" type="password" name="pass" value="<?php if(isset($_POST['pass'])) echo $pass ?>"/></td>
+                    <td><input class="form-control" type="password" name="pass" value="<?php if(isset($_POST['pass'])) echo $pass ?>" required/></td>
                 </tr>
                 <tr><td colspan="2"><input class="btn btn-primary" name="submit" type="submit" value="Login"/></td></tr>
             </table>
