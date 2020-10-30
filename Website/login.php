@@ -19,10 +19,11 @@ and open the template in the editor.
             if(isset($_POST['submit'])){
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
-                $query = "SELECT userName, password, name, type FROM user WHERE userName='$user' AND password='$pass'";
+                $query = "SELECT userID, userName, password, name, type FROM user WHERE userName='$user' AND password='$pass'";
                 $result = mysqli_query($conn, $query);
                 if(mysqli_num_rows($result)>0){
                     $acc = mysqli_fetch_array($result);
+                    $_SESSION['cID'] = $acc['userID'];
                     $_SESSION['cUser'] = $acc['name'];
                     $_SESSION['cRole'] = $acc['type'];
                     header("Location:index.php");

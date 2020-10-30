@@ -5,7 +5,37 @@
             include ('includes/header.php');
             if(!isset($cUser)) header("Location:login.php");
         ?>
-        <h1>Registered Users</h1>
+        <h1 class="text-danger">Registered Users</h1>
+        <?php
+            require 'conn.php';
+            $query = "SELECT DISTINCT * FROM user, user_type WHERE type=typeID";
+            $result = mysqli_query($conn, $query);
+            $l = mysqli_num_rows($result);
+            if($l>0){
+                echo "<table class='table table-stripped table-info col-10' align='center'>"
+                . "<tr class='text-center text-primary' bgcolor='cyan'>"
+                        . "<th>Username</th><th>Bậc</th><th>Họ tên</th><th>Giới tính</th><th>Ngày sinh</th><th>Email</th><th>SĐT</th>";
+                if(isset($_SESSION['cRole']) && $_SESSION['cRole']=='mngr') echo '<th>Chức năng</th>';
+                echo '</tr>';
+                while($ar = mysqli_fetch_array($result)){
+                    $d = date_format(date_create($ar['dob']), 'd/m/Y');
+                    echo "<tr class='text-center'>";
+                    echo "<td>$ar[userName]</td>";
+                    echo "<td>$ar[role]</td>";
+                    echo "<td>$ar[name]</td>";
+                    if($ar['gender']==0) echo '<td>Nam</td>';
+                    else echo '<td>Nữ</td>';
+                    echo "<td>$d</td>";
+                    echo "<td>$ar[email]</td>";
+                    echo "<td>$ar[phone]</td>";
+                    if($_SESSION['cRole']=='mngr'){
+                        echo "<td style='font-size:120%'>"
+                        . "<a href='edit_user.php?id=$ar[userID]'><i class='fa fa-pencil' aria-hidden='true' style='color:yellow'></i></a> | "
+                        . "<a href='delete_user.php?id=$ar[userID]'><i class='fa fa-trash text-danger' aria-hidden='true'></i></a></td>";
+                    }
+                }
+            }
+        ?>
         <?php include ('includes/footer.html')?>
     </body>
 </html>

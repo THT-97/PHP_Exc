@@ -3,7 +3,6 @@
     <body style="background-color: darkseagreen">
         <?php 
             include ('includes/header.php');
-            if(!isset($cUser)) header("Location:login.php");
         ?>
         
         <div class="text-center">
