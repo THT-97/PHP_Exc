@@ -12,12 +12,11 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            $a = "";
-            $max = "";
-            $min = "";
-            $sum = "";
-            
             if(isset($_POST['submitp4b5'])){
+                $a5 = "";
+                $max = "";
+                $min = "";
+                $sum = "";
                 //create array
                 function generateArray($size){
                     $array = [];
@@ -53,9 +52,9 @@ and open the template in the editor.
                     return $s;
                 }
             
-                $n = $_POST['n'];
-                $ar = generateArray($n);
-                $a = arrayToString($ar);
+                $n5 = $_POST['n5'];
+                $ar = generateArray($n5);
+                $a5 = arrayToString($ar);
                 $max = getMax($ar);
                 $min = getMin($ar);
                 $sum = getSum($ar);
@@ -70,7 +69,7 @@ and open the template in the editor.
                 </tr>
                 <tr class="bg-danger">
                     <th>Nhập số phần tử:</th>
-                    <td><input class="form-control" name="n" type="number" min="0" value="<?php if(isset($_POST["n"])) echo $n ?>"/></td>
+                    <td><input class="form-control" name="n5" type="number" min="0" value="<?php if(isset($_POST["n5"])) echo $n5 ?>"/></td>
                 </tr>
                 <tr class="bg-danger text-center">
                     <td></td>
@@ -78,19 +77,19 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <th>Mảng:</th>
-                    <td><input class="form-control" type="text" size="50%" disabled="1" value="<?php echo $a ?>"/></td>
+                    <td><input class="form-control" type="text" size="50%" disabled="1" value="<?php if(isset($a5)) echo $a5 ?>"/></td>
                 </tr>
                 <tr>
                     <th>GTLN (MAX) Trong mảng:</th>
-                    <td><input class="input-sm" type="text" disabled="1" value="<?php echo $max ?>"/></td>
+                    <td><input class="input-sm" type="text" disabled="1" value="<?php if(isset($max)) echo $max ?>"/></td>
                 </tr>
                 <tr>
                     <th>GTNN (MIN) Trong mảng:</th>
-                    <td><input class="input-sm" type="text" disabled="1" value="<?php echo $min ?>"/></td>
+                    <td><input class="input-sm" type="text" disabled="1" value="<?php if(isset($min)) echo $min ?>"/></td>
                 </tr>
                 <tr>
                     <th>Tổng mảng:</th>
-                    <td><input class="input-sm" type="text" disabled="1" value="<?php echo $sum ?>"/></td>
+                    <td><input class="input-sm" type="text" disabled="1" value="<?php if(isset($sum)) echo $sum ?>"/></td>
                 </tr>
                 <tr class="text-center">
                     <td colspan="2">(<b style="color: red">Ghi chú:</b> Các phần tử trong mảng sẽ có giá trị từ 0 đến 20)</td>

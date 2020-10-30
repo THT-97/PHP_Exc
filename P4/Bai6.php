@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            $a = '';
+            $a6 = '';
             $result = '';
 
             if(isset($_POST["submitp4b6"])){
@@ -32,12 +32,12 @@ and open the template in the editor.
                     return $report;
                 }
                 
-                $a = str_replace(" ", "", $_POST["arr"]);
-                $n = $_POST['n'];
-                $arr = explode(",", $a);
-                $result = search($arr,$n);
+                $a6 = str_replace(" ", "", $_POST["arr"]);
+                $n6 = $_POST['n6'];
+                $arr = explode(",", $a6);
+                $result = search($arr,$n6);
                 foreach ($arr as $key => $value) if(!is_numeric($value)) unset($arr[$key]); //remove non numeric elements
-                $a = implode(",  ", $arr);
+                $a6 = implode(",  ", $arr);
             }
         ?>
         <form action="#p4b6" method="POST" id="p4b6">
@@ -49,11 +49,11 @@ and open the template in the editor.
                 </tr>
                 <tr class="bg-success">
                     <th>Nhập mảng:</th>
-                    <td><input class="form-control" size="50%" name="arr" type="text" value="<?php if(isset($_POST["arr"])) echo $a ?>"/></td>
+                    <td><input class="form-control" size="50%" name="arr" type="text" value="<?php if(isset($_POST["arr"])) echo $a6 ?>"/></td>
                 </tr>
                 <tr class="bg-success">
                     <th>Nhập số cần tìm:</th>
-                    <td><input class="input-sm" name="n" type="number" value="<?php if(isset($_POST["n"])) echo $n ?>"/></td>
+                    <td><input class="input-sm" name="n6" type="number" value="<?php if(isset($_POST["n6"])) echo $n6 ?>"/></td>
                 </tr>
                 <tr class="bg-success text-center">
                     <td></td>
@@ -61,7 +61,7 @@ and open the template in the editor.
                 </tr>
                 <tr class="bg-success">
                     <th>Mảng:</th>
-                    <td><input class="form-control" type="text" disabled="1" value="<?php echo $a ?>"/></td>
+                    <td><input class="form-control" type="text" disabled="1" value="<?php echo $a6 ?>"/></td>
                 </tr>
                 <tr class="bg-success">
                     <th>Kết quả tìm kiếm:</th>

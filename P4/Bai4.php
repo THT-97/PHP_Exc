@@ -23,7 +23,7 @@ and open the template in the editor.
                     }
                     return $s;
                 }
-                $a = str_replace(" ", "", $_POST["arr"]);
+                $a4 = str_replace(" ", "", $_POST["arr"]);
                 $arr = explode(",", $a);
                 $sum = getSum($arr);
             }
@@ -40,7 +40,7 @@ and open the template in the editor.
                     <th class="text-center">
                         <label>Nhập dãy số:</label>
                     </th>
-                    <td><input class="form-control" name="arr" type="text" value="<?php if(isset($_POST["arr"])) echo $a ?>"/></td>
+                    <td><input class="form-control" name="arr" type="text" value="<?php if(isset($a4)) echo $a4 ?>"/></td>
                     <td class="text-danger"><b>(*)</b></td>
                 </tr>
                 <tr class="bg-success text-center">

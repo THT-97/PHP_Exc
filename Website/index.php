@@ -1,7 +1,11 @@
 <html>
     <?php $page_title="Index"; include ('includes/headtag.html')?>
     <body style="background-color: darkseagreen">
-        <?php include ('includes/header.php')?>
+        <?php 
+            include ('includes/header.php');
+            if(!isset($cUser)) header("Location:login.php");
+        ?>
+        
         <div class="text-center">
             <h1>Big Header</h1>
             <p>This is where you'll put the main page content. This content will differ for each page.</p>
