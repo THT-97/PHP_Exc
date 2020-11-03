@@ -30,8 +30,7 @@
                     echo "<td>$ar[phone]</td>";
                     if($_SESSION['cRole']=='mngr'){
                         echo "<td style='font-size:120%'>"
-                        . "<a href='edit_user.php?id=$ar[userID]'><i class='fa fa-pencil' aria-hidden='true' style='color:yellow'></i></a> | "
-                        . "<a href='delete_user.php?id=$ar[userID]'><i class='fa fa-trash text-danger' aria-hidden='true'></i></a></td>";
+                        . "<a href='user_details.php?id=$ar[userID]'>Chi tiết <i class='fa fa-info-circle text-info' aria-hidden='true'></i></a></td>";
                     }
                 }
             }

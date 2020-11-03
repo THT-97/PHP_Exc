@@ -1,6 +1,3 @@
-<?php
-    session_set_cookie_params(3600,"/");
-?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -21,11 +18,12 @@ and open the template in the editor.
                 $pass = $_POST['pass'];
                 $query = "SELECT userID, userName, password, name, type FROM user WHERE userName='$user' AND password='$pass'";
                 $result = mysqli_query($conn, $query);
-                if(mysqli_num_rows($result)>0){
+                if(mysqli_num_rows($result)==1){
                     $acc = mysqli_fetch_array($result);
                     $_SESSION['cID'] = $acc['userID'];
                     $_SESSION['cUser'] = $acc['name'];
                     $_SESSION['cRole'] = $acc['type'];
+                    $_SESSION['sessionStart'] = time();
                     header("Location:index.php");
                 }
                 else $warning = 'Username hoặc Password không đúng';
@@ -41,7 +39,12 @@ and open the template in the editor.
                     <th>Password</th>
                     <td><input class="form-control" type="password" name="pass" value="<?php if(isset($_POST['pass'])) echo $pass ?>" required/></td>
                 </tr>
-                <tr><td colspan="2"><input class="btn btn-primary" name="submit" type="submit" value="Login"/></td></tr>
+                <tr>
+                    <td colspan="2">
+                        <input class="btn btn-primary" name="submit" type="submit" value="Login"/>
+                        <a class="btn btn-warning" href="javascript:window.history.back(-1);">Quay lại</a>
+                    </td>
+                </tr>
             </table>
             <p class="text-center text-danger"><?php echo $warning ?></p>
         </form>

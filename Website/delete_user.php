@@ -1,76 +1,51 @@
-<?php # Script 10.2 - delete_user.php
-// This page is for deleting a user record.
-// This page is accessed through view_users.php.
-
-$page_title = 'Delete a User';
-include ('includes/header.html');
-echo '<h1>Delete a User</h1>';
-
-// Check for a valid user ID, through GET or POST:
-if ( (isset($_GET['id'])) && (is_numeric($_GET['id'])) ) { // From view_users.php
-	$id = $_GET['id'];
-} elseif ( (isset($_POST['id'])) && (is_numeric($_POST['id'])) ) { // Form submission.
-	$id = $_POST['id'];
-} else { // No valid ID, kill the script.
-	echo '<p class="error">This page has been accessed in error.</p>';
-	include ('includes/footer.html'); 
-	exit();
-}
-
-require ('../mysqli_connect.php');
-
-// Check if the form has been submitted:
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-	if ($_POST['sure'] == 'Yes') { // Delete the record.
-
-		// Make the query:
-		$q = "DELETE FROM users WHERE user_id=$id LIMIT 1";		
-		$r = @mysqli_query ($dbc, $q);
-		if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
-
-			// Print a message:
-			echo '<p>The user has been deleted.</p>';	
-
-		} else { // If the query did not run OK.
-			echo '<p class="error">The user could not be deleted due to a system error.</p>'; // Public message.
-			echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
-		}
-	
-	} else { // No confirmation of deletion.
-		echo '<p>The user has NOT been deleted.</p>';	
-	}
-
-} else { // Show the form.
-
-	// Retrieve the user's information:
-	$q = "SELECT CONCAT(last_name, ', ', first_name) FROM users WHERE user_id=$id";
-	$r = @mysqli_query ($dbc, $q);
-
-	if (mysqli_num_rows($r) == 1) { // Valid user ID, show the form.
-
-		// Get the user's information:
-		$row = mysqli_fetch_array ($r, MYSQLI_NUM);
-		
-		// Display the record being deleted:
-		echo "<h3>Name: $row[0]</h3>
-		Are you sure you want to delete this user?";
-		
-		// Create the form:
-		echo '<form action="delete_user.php" method="post">
-	<input type="radio" name="sure" value="Yes" /> Yes 
-	<input type="radio" name="sure" value="No" checked="checked" /> No
-	<input type="submit" name="submit" value="Submit" />
-	<input type="hidden" name="id" value="' . $id . '" />
-	</form>';
-	
-	} else { // Not a valid user ID.
-		echo '<p class="error">This page has been accessed in error.</p>';
-	}
-
-} // End of the main submission conditional.
-
-mysqli_close($dbc);
-		
-include ('includes/footer.html');
-?>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <?php $page_title="About"; include ('includes/headtag.html')?>
+    <body style="background-color: darkseagreen">
+        <?php
+            include ('includes/header.php');
+            if(!isset($cUser)) header("Location:login.php");
+            require './conn.php';
+            $id = $_GET['id'];
+            $query = "SELECT * FROM user WHERE userID='$id'";
+            $result = mysqli_query($conn, $query);
+            $acc = mysqli_fetch_array($result);
+            if(isset($_POST['delete'])){
+                $result = mysqli_query($conn, "DELETE FROM user WHERE userID='$id'");
+                if($result!=false) header("Location:view_users.php");
+            }
+        ?>
+        <h1 class="text-danger text-center">XÁC NHẬN XÓA</h1>
+        <form action="" method="POST">
+            <table style="margin-top: 1%; font-size: 200%; font-family: sans-serif" align="center" class="table-condensed table-info">
+                <tr bgcolor="green">
+                    <th colspan="2"><h1 class="text-warning text-center" style="margin-left: 10%"><b>THÔNG TIN TÀI KHOẢN</b></h1></th>
+                </tr>
+                <tr>
+                    <td><img alt="authorPic" src="includes/img/<?php echo $acc['pic'] ?>" width="300px" height="400px" /></td>
+                    <td>
+                        <b>
+                           <p>Họ tên: <?php echo $acc['name'] ?></p>
+                           <p>Giới tính: <?php echo ($acc['gender']==0)?'Nam':'Nữ'; ?></p>
+                           <p>Ngày sinh: <?php echo date_format(date_create($acc['dob']),'d/m/Y')  ?></p>
+                           <p>Email: <?php echo $acc['email'] ?></p>
+                           <p>SĐT: <?php echo $acc['phone'] ?></p>   
+                        </b>  
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="btn btn-primary" href="view_users.php">Quay lại</a>
+                        <input class="btn btn-danger" type="submit" name="delete" value="Xóa" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <?php include ('includes/footer.html')?>
+    </body>
+</html>

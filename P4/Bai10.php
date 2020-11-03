@@ -22,7 +22,8 @@ and open the template in the editor.
                  function addToCart($flower){
                     global $flowers;
                     global $warning;
-                    if(in_array($flower, $flowers)) $warning = "Hoa đã có trong giỏ";
+                    $search_array = array_map('strtolower',$flowers);
+                    if(in_array(strtolower($flower), $search_array)) $warning = "Hoa đã có trong giỏ";
                     else if($flower!="") $flowers[] = $flower;
                 }
                 

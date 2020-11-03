@@ -64,10 +64,11 @@
                 }
                 if($valid){
                     $id = generateID();
+                    $pic = $id.".$t";
                     $query = "INSERT INTO user(userID,userName,password,name,dob,gender,email,phone,pic,type) VALUES ("
                             . "'$id','$usn','$pass','$name','$dob',$gender,'$mail','$phone','$pic','usr')";
                     $result = mysqli_query($conn, $query);
-                    move_uploaded_file($_FILES['pic']['tmp_name'], "includes/img/".$_FILES['pic']['name']);
+                    move_uploaded_file($_FILES['pic']['tmp_name'], "includes/img/".$pic);
                     if($result!=false) header("Location:reginfo.php?userName=$usn");
                 }
             }
@@ -105,7 +106,7 @@
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td><input class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="mail" minlength="11" value="<?php if(isset($_POST['mail'])) echo $mail ?>" required/></td>
+                    <td><input class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="mail" minlength="3" value="<?php if(isset($_POST['mail'])) echo $mail ?>" required/></td>
                     <th class="text-danger"><?php if(isset($mailw)) echo $mailw ?></th>
                 </tr>
                 <tr>
@@ -115,10 +116,15 @@
                 </tr>
                 <tr>
                     <td>Ảnh:</td>
-                    <td><input class="form-control" type="file" name="pic" value="<?php echo $pic ?>"/></td>
+                    <td><input type="file" name="pic" value="<?php echo $pic ?>"/></td>
                     <th class="text-danger"><?php if(isset($picw)) echo $picw ?></th>
                 </tr>
-                <tr><td colspan="2"><input class="btn btn-primary" type="submit" name="register" value="Đăng ký"/></td></tr>
+                <tr>
+                    <td colspan="2">
+                        <input class="btn btn-primary" type="submit" name="register" value="Đăng ký"/>
+                        <a class="btn btn-warning" href="javascript:window.history.back(-1);">Quay lại</a>
+                    </td>
+                </tr>
             </table>
         </form>
         <?php include ('includes/footer.html')?>

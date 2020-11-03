@@ -40,8 +40,11 @@
                         $picw = 'Chỉ chọn file có định dạng png/jpg/jpeg/gif và có kích thước tối đa 2MB';
                         $valid = false;
                     }
-                    else if($pic!=$acc['pic']) $count++;
-                }
+                    else{
+                        $pic = $_SESSION['cID'].".$t";
+                        $count++;
+                    }
+                } 
                 
                 if ($usn != '') {
                     $rn = mysqli_query($conn, "SELECT userName FROM user WHERE userName='$usn'");
@@ -87,7 +90,7 @@
                             if($count>0) $query .= ',';
                         }
                         if($name!=$acc['name']){
-                            $query .= "name=$name";
+                            $query .= "name='$name'";
                             $count--;
                             if($count>0) $query .= ',';
                         }
@@ -117,8 +120,9 @@
                             if($count>0) $query .= ',';
                         }
                         $query .= " WHERE userID='$acc[userID]'";
+                        var_dump($query);
                         $result = mysqli_query($conn, $query);
-                        move_uploaded_file($_FILES['pic']['tmp_name'], "includes/img/".$_FILES['pic']['name']);
+                        move_uploaded_file($_FILES['pic']['tmp_name'], "includes/img/".$pic);
                         if($result!=false){
                             header("Location:#");
                         }
@@ -167,7 +171,7 @@
                     </tr>
                     <tr>
                         <th>Email</th>
-                        <td><input class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" minlength="11" name="mail" value="<?php echo $acc['email'] ?>" required/></td>
+                        <td><input class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" minlength="3" name="mail" value="<?php echo $acc['email'] ?>" required/></td>
                         <th class="text-danger"><?php if(isset($mailw)) echo $mailw ?></th>
                     </tr>
                     <tr>
@@ -177,10 +181,15 @@
                     </tr>
                     <tr>
                         <th>Ảnh:</th>
-                        <td><input class="form-control" type="file" name="pic" value="<?php echo $pic ?>"/></td>
+                        <td><input type="file" name="pic" value="<?php echo $pic ?>"/></td>
                         <th class="text-danger"><?php if(isset($picw)) echo $picw ?></th>
                     </tr>
-                    <tr><td><input class="btn btn-warning" type="submit" name="save" value="Lưu thay đổi" /></td></tr>
+                    <tr>
+                        <td>
+                            <input class="btn btn-warning" type="submit" name="save" value="Lưu thay đổi" />
+                            <a class="btn btn-warning" href="javascript:window.history.back(-1);">Quay lại</a>
+                        </td>
+                    </tr>
                 </table>
             </form>
         </div>
