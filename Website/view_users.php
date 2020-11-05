@@ -15,7 +15,7 @@
                 echo "<table class='table table-stripped table-info col-10' align='center'>"
                 . "<tr class='text-center text-primary' bgcolor='cyan'>"
                         . "<th>Username</th><th>Bậc</th><th>Họ tên</th><th>Giới tính</th><th>Ngày sinh</th><th>Email</th><th>SĐT</th>";
-                if(isset($_SESSION['cRole']) && $_SESSION['cRole']=='mngr') echo '<th>Chức năng</th>';
+                echo '<th>Chức năng</th>';
                 echo '</tr>';
                 while($ar = mysqli_fetch_array($result)){
                     $d = date_format(date_create($ar['dob']), 'd/m/Y');
@@ -28,10 +28,8 @@
                     echo "<td>$d</td>";
                     echo "<td>$ar[email]</td>";
                     echo "<td>$ar[phone]</td>";
-                    if($_SESSION['cRole']=='mngr'){
-                        echo "<td style='font-size:120%'>"
+                    echo "<td style='font-size:120%'>"
                         . "<a href='user_details.php?id=$ar[userID]'>Chi tiết <i class='fa fa-info-circle text-info' aria-hidden='true'></i></a></td>";
-                    }
                 }
             }
         ?>

@@ -186,8 +186,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <input class="btn btn-warning" type="submit" name="save" value="Lưu thay đổi" />
                             <a class="btn btn-warning" href="javascript:window.history.back(-1);">Quay lại</a>
+                            <input class="btn btn-primary" type="submit" name="save" value="Lưu thay đổi" />
                         </td>
                     </tr>
                 </table>

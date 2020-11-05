@@ -1,9 +1,11 @@
 <?php
     if(session_status()==PHP_SESSION_NONE) session_start();
     if(isset($_SESSION['sessionStart'])){
-        $timeLimit = 300; //login lasts 30 mins
+        $timeLimit = 300; //login lasts 5 mins
         $start = $_SESSION['sessionStart'];
         $cUser = $_SESSION['cUser'];
+        $cId = $_SESSION['cID'];
+        $cRole = $_SESSION['cRole'];
         if(isset($_POST['logout']) || (time()-$start)>$timeLimit){
             session_destroy();
             header("Location:http://localhost:7000/baitap/Website/index.php");
@@ -30,8 +32,9 @@
         <div class="btn-group" style="position: fixed; right: 0; top: 0">
             <?php
                 if (isset($_SESSION['cUser'])) {
+                    var_dump($cId);
                     echo "<form class='btn-group' action='' method='POST'>"
-                    . "<a class='btn btn-primary' href='http://localhost:7000/baitap/Website/password.php'>$cUser</a>"
+                    . "<a class='btn btn-primary' href='http://localhost:7000/baitap/Website/user_details.php?id=$cId'>$cUser</a>"
                     . "<button class='btn btn-danger' type='submit' name='logout'><i class='fa fa-sign-out' aria-hidden='true'></i>Logout</button></form>";
                 }
                 else{

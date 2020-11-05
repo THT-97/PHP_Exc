@@ -1,14 +1,17 @@
 <html>
     <?php $page_title='Edit user'; include ('includes/headtag.html')?>
     <body style="background-color: darkseagreen">
-        <?php 
+        <?php
             include ('includes/header.php');
-            require 'conn.php';
             $id = $_GET['id'];
-            $query = "SELECT * FROM user WHERE userID='$id'";
+            if(!isset($cId)) header("Location:login.php");
+            if($cRole!='mngr') header("Location:view_users.php"); //if user is not manager
+            require 'conn.php';
+            $query = "SELECT DISTINCT * FROM user, user_type WHERE userID='$id' AND type=typeID";
             $result = mysqli_query($conn, $query);
             $acc = mysqli_fetch_array($result);
-            $adminpass = mysqli_fetch_array(mysqli_query($conn, "SELECT password FROM user WHERE userID='u0000'"))[0];
+            $adminpass = mysqli_fetch_array(mysqli_query($conn, "SELECT password FROM user WHERE userID='$cId'"))[0];
+            $role = $acc['type'];
             $pic = $acc['pic'];
             $valid = true;
             $count = 0;
@@ -23,7 +26,8 @@
                 $dob = $_POST['dob'];
                 $mail = $_POST['mail'];
                 $phone = $_POST['phone'];
-                
+                $role = $_POST['type'];
+               
                 $pic = $_FILES['pic']['name'];
                 if($_FILES['pic']['name']!=NULL){
                     $t = substr($_FILES['pic']['type'],6);
@@ -46,7 +50,7 @@
                     }
                     else if($usn!=$acc['userName']) $count++;
                 }
-
+                if($role!=$acc['type']) $count++;
                 if($name!=$acc['name']) $count++;
                 if($dob!=$acc['dob']) $count++;
                 
@@ -76,6 +80,12 @@
                             $count--;
                             if($count>0) $query .= ',';
                         }
+                        if($role!=$acc['type']){
+                            $query .= "type='$role'";
+                            $count--;
+                            if($count>0) $query .= ',';
+                        }
+                        
                         if($name!=$acc['name']){
                             $query .= "name='$name'";
                             $count--;
@@ -130,6 +140,24 @@
                         <th class="text-danger"><?php if(isset($usnw)) echo $usnw ?></th>
                     </tr>
                     <tr>
+                        <th>Bậc:</th>
+                        <td>
+                             <select class="form-control" name="type">
+                                <?php
+                                    if($cId=='u0000' && $id!='u0000'){
+                                        $roles = mysqli_query($conn, "SELECT * FROM user_type");
+                                        while($r = mysqli_fetch_array($roles)){
+                                            echo "<option value='$r[typeID]' ";
+                                            if($role ==$r['typeID']) echo "selected='1'";
+                                            echo ">$r[role]</option>";
+                                        }
+                                    }
+                                    else echo "<option>$acc[role]</option>";
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Họ tên:</th>
                         <td><input class="form-control" type="text" minlength="5" name="name" value="<?php echo $acc['name'] ?>" required/></td>
                     </tr>
@@ -167,7 +195,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <a class="btn btn-primary" href="view_users.php">Quay lại</a>
+                            <a class="btn btn-primary" href="view_users.php">Danh sách</a>
                             <input class="btn btn-warning" type="submit" name="save" value="Lưu thay đổi" />
                         </td>
                     </tr>

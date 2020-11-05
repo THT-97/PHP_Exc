@@ -10,6 +10,7 @@ and open the template in the editor.
         <?php
             include ('includes/header.php');
             if(!isset($cUser)) header("Location:login.php");
+            if($cRole!='mngr') header("Location:view_users.php"); //if user is not manager
             require './conn.php';
             $id = $_GET['id'];
             $query = "SELECT * FROM user WHERE userID='$id'";
