@@ -3,7 +3,10 @@
     <body style="background-color: darkseagreen">
         <?php
             include ('includes/header.php');
-            if(!isset($cUser)) header("Location:login.php");
+            if(!isset($cUser)){
+                header("Location:login.php");
+                exit();
+            }
         ?>
         <h1 class="text-danger">Registered Users</h1>
         <?php

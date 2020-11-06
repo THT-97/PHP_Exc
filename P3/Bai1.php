@@ -5,12 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Diện tích hình chữ nhật</title>
-    </head>
-    <body>
+    <?php $page_title='Forms - Diện tích hình chữ nhật'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             $area = 0;
             if(isset($_POST["submitp3b1"])){
                 $width = $_POST["nWidth"];
@@ -20,7 +22,7 @@ and open the template in the editor.
                 $area = $width * $length;
             }
         ?>
-        <form action="" method="POST">
+        <form class="d-flex justify-content-center m-5" action="" method="POST">
             <table style="border-collapse:collapse" width='30%'>
                 <tr bgcolor='orange'>
                     <th colspan="2" width='100%'>
@@ -44,5 +46,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

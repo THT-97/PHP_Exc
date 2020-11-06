@@ -4,8 +4,14 @@
         <?php
             include ('includes/header.php');
             $id = $_GET['id'];
-            if(!isset($cId)) header("Location:login.php");
-            if($cRole!='mngr') header("Location:view_users.php"); //if user is not manager
+            if(!isset($cId)){
+                header("Location:login.php");
+                exit();
+            }
+            if($cRole!='mngr'){
+                header("Location:view_users.php"); //if user is not manager
+                exit();
+            }
             require 'conn.php';
             $query = "SELECT DISTINCT * FROM user, user_type WHERE userID='$id' AND type=typeID";
             $result = mysqli_query($conn, $query);
@@ -121,6 +127,7 @@
                         move_uploaded_file($_FILES['pic']['tmp_name'], "includes/img/".$pic);
                         if($result!=false){
                             header("Location:#");
+                            exit();
                         }
                     }
                 }
@@ -205,7 +212,10 @@
         <?php
             include ('includes/footer.html');
             //redirect to index if user is not manager
-            if(!isset($_SESSION['cRole']) || $_SESSION['cRole']!='mngr') header("Location:index.php");
+            if(!isset($_SESSION['cRole']) || $_SESSION['cRole']!='mngr'){
+                header("Location:index.php");
+                exit();
+            }
         ?>
     </body>
 </html>

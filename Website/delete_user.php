@@ -9,8 +9,14 @@ and open the template in the editor.
     <body style="background-color: darkseagreen">
         <?php
             include ('includes/header.php');
-            if(!isset($cUser)) header("Location:login.php");
-            if($cRole!='mngr') header("Location:view_users.php"); //if user is not manager
+            if(!isset($cUser)){
+                header("Location:login.php");
+                exit();
+            }
+            if ($cRole != 'mngr') {
+                header("Location:view_users.php");
+                exit();
+            }
             require './conn.php';
             $id = $_GET['id'];
             $query = "SELECT * FROM user WHERE userID='$id'";
@@ -18,7 +24,10 @@ and open the template in the editor.
             $acc = mysqli_fetch_array($result);
             if(isset($_POST['delete'])){
                 $result = mysqli_query($conn, "DELETE FROM user WHERE userID='$id'");
-                if($result!=false) header("Location:view_users.php");
+                if($result!=false){
+                    header("Location:view_users.php");
+                    exit();
+                }
             }
         ?>
         <h1 class="text-danger text-center">XÁC NHẬN XÓA</h1>

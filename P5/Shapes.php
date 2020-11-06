@@ -4,7 +4,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Tinh chu vi va dien tich</title>
+<title>Tính chu vi và diện tích</title>
 <style>
 fieldset {
   background-color: #eeeeee;

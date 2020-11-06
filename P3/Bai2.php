@@ -5,12 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Diện tích và chu vi hình tròn</title>
-    </head>
-    <body>
+    <?php $page_title='Forms - Diện tích và chu vi hình tròn'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             $area = 0;
             $outline = 0;
             const PI = 3.14;
@@ -21,7 +23,7 @@ and open the template in the editor.
                 $outline = 2*PI*$radius;
             }
         ?>
-        <form action="" method="POST">
+        <form class="d-flex justify-content-center m-5" action="" method="POST">
             <table style="border-collapse:collapse" width='30%'>
                 <tr bgcolor='orange'>
                     <th colspan="2" width='100%'>
@@ -45,5 +47,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

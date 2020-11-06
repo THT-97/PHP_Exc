@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -6,14 +5,20 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <?php $page_title='Xổ số'; include '../../Website/includes/headtag.html'; ?>
-    <body>
-        <?php include '../../Website/includes/header.php'; ?>
-        <h3 class="text-uppercase text-primary" align="center">
+    <?php $page_title='Forms - Xổ số'; include '../../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen; ">
+        <?php
+            include '../../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../../Website/login.php");
+                exit();
+            }
+        ?>
+        <h3 class="text-uppercase bg-white text-primary mt-5" align="center">
             Kết quả xổ số Khánh Hòa Ngày
             <?php echo date("d/m/Y");?>
         </h3>
-        <table class="table-condensed table-striped table-hover" align="center">
+        <table class="table-condensed table-info table-striped table-hover" align="center">
         <?php
             for($i=8; $i>0; $i--){
                 echo "<tr width='100%'>";
@@ -82,7 +87,7 @@ and open the template in the editor.
         </table>
         <form class="form-horizontal text-center" action="DoSo.php" method="GET">
             <div class="form-group form-inline justify-content-center">
-                <label class="text-success col-1">Nhập số vé</label>&nbsp;
+                <label class="form-control bg-white text-success col-1">Nhập số vé</label>&nbsp;
                 <input class="form-control col-2" name="Ticket" type="text" minlength="6" maxlength="6"/>
             </div>
             <input class="btn btn-warning text-uppercase" name="Submit" type="submit" value="Dò số"/>

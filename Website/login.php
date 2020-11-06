@@ -24,7 +24,8 @@ and open the template in the editor.
                     $_SESSION['cUser'] = $acc['name'];
                     $_SESSION['cRole'] = $acc['type'];
                     $_SESSION['sessionStart'] = time();
-                    header("Location:index.php");
+                    header('Location:index.php');
+                    exit();
                 }
                 else $warning = 'Username hoặc Password không đúng';
             }
