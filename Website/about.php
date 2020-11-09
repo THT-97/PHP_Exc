@@ -32,6 +32,6 @@ and open the template in the editor.
                 </td>
             </tr>
         </table>
-        <?php include ('includes/footer.html')?>
+        <?php mysqli_close($conn); include '../Website/includes/footer.html'; ?>
     </body>
 </html>

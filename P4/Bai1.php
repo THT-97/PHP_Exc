@@ -5,13 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Mảng ngẫu nhiên</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
-    <body>
+    <?php $page_title='Array&String - Mảng ngẫu nhiên'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
             if(isset($_POST["submitp4b1"])){
                 $n = $_POST["numN"];
                 if($n=='') $n = 2;
@@ -44,7 +41,7 @@ and open the template in the editor.
                 $result .="f: Mảng tăng dần: " .implode(" ", $a);
             }
         ?>
-        <form action="#p4b1" method="POST" id="p4b1">
+        <form class="d-flex justify-content-center m-5" action="#p4b1" method="POST" id="p4b1">
             <h2>Mảng ngẫu nhiên</h2>
             <table class="table-condensed">
                 <tr>
@@ -63,5 +60,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

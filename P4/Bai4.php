@@ -5,13 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Tính trên dãy số</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
-    <body>
+    <?php $page_title='Array&String - Tính trên dãy số'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
             $sum = "";
             if(isset($_POST["submitp4b4"])){
                 function getSum($arr){
@@ -24,12 +21,12 @@ and open the template in the editor.
                     return $s;
                 }
                 $a4 = str_replace(" ", "", $_POST["arr"]);
-                $arr = explode(",", $a);
+                $arr = explode(",", $a4);
                 $sum = getSum($arr);
             }
 
         ?>
-        <form action="#p4b4" method="POST" id="p4b4">
+        <form class="d-flex justify-content-center m-5" action="#p4b4" method="POST" id="p4b4">
             <table align="center" class="table-condensed">
                 <tr class="bg-primary">
                     <th class="text-center" colspan="3" style="color: white;">
@@ -60,5 +57,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

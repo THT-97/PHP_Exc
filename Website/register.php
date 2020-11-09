@@ -64,7 +64,7 @@
                 }
                 if($valid){
                     $id = generateID();
-                    $pic = $id.".$t";
+                    if($pic!='defaultpic.png') $pic = $id.".$t";
                     $query = "INSERT INTO user(userID,userName,password,name,dob,gender,email,phone,pic,type) VALUES ("
                             . "'$id','$usn','$pass','$name','$dob',$gender,'$mail','$phone','$pic','usr')";
                     $result = mysqli_query($conn, $query);

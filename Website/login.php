@@ -24,6 +24,7 @@ and open the template in the editor.
                     $_SESSION['cUser'] = $acc['name'];
                     $_SESSION['cRole'] = $acc['type'];
                     $_SESSION['sessionStart'] = time();
+                    mysqli_close($conn);
                     header('Location:index.php');
                     exit();
                 }

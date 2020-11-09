@@ -5,13 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Tính năm nhuận</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
-    <body>
+    <?php $page_title='Array&String - Tính năm nhuận'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
             $currentYear = date("Y");
             //Hàm tính năm nhuận
             function nam_nhuan($nam){
@@ -34,7 +31,7 @@ and open the template in the editor.
             }
             
         ?>
-        <form action="#p4b3" method="POST" id="p4b3">
+        <form class="d-flex justify-content-center m-5" action="#p4b3" method="POST" id="p4b3">
             <table align="center" class="table-condensed">
                 <tr class="bg-primary">
                     <th class="text-center" colspan="3" style="color: white;"><h3 style="font-family:'Comic Sans MS'">TÍNH NĂM NHUẬN</h3></th>
@@ -58,5 +55,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

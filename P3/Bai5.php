@@ -5,12 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Tính tiền karaoke</title>
-    </head>
-    <body>
+    <?php $page_title='Forms - Tính tiền karaoke'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
             $cost = "";
             if(isset($_POST["submitp3b5"])){
                 $start = $_POST["Start"];
@@ -25,8 +23,8 @@ and open the template in the editor.
             }
         }
         ?>
-        <form action="#p3b5" method="POST" id="p3b5">
-            <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
+        <form class="d-flex justify-content-center m-5" action="#p3b5" method="POST" id="p3b5">
+            <table class="table-condensed col-4" style="margin-left: auto; margin-right: auto">
                 <tr class="bg-primary">
                     <th colspan="3" class="text-center">
                         <h2 style="color:white">TÍNH TIỀN KARAOKE</h2>
@@ -58,5 +56,6 @@ and open the template in the editor.
                 ?>
             </p>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

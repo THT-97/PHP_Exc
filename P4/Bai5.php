@@ -5,13 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Phát sinh mảng và tính toán</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
-    <body>
+    <?php $page_title='Array&String - Phát sinh mảng và tính toán'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
             if(isset($_POST['submitp4b5'])){
                 $a5 = "";
                 $max = "";
@@ -60,7 +57,7 @@ and open the template in the editor.
                 $sum = getSum($ar);
             }
         ?>
-        <form action="#p4b5" method="POST" id="p4b5">
+        <form class="d-flex justify-content-center m-5" action="#p4b5" method="POST" id="p4b5">
             <table align="center" class="table-condensed">
                 <tr bgcolor="purple">
                     <th class="text-center" colspan="2" style="color: white;">
@@ -96,5 +93,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

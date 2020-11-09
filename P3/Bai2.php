@@ -24,10 +24,10 @@ and open the template in the editor.
             }
         ?>
         <form class="d-flex justify-content-center m-5" action="" method="POST">
-            <table style="border-collapse:collapse" width='30%'>
+            <table style="border-collapse:collapse" width='40%'>
                 <tr bgcolor='orange'>
                     <th colspan="2" width='100%'>
-                        <h2 style="color:brown">DIỆN TÍCH VÀ CHU VI HÌNH TRÒN</h2>
+                        <h2 class="text-center" style="color:brown">DIỆN TÍCH VÀ CHU VI HÌNH TRÒN</h2>
                     </th>
                 </tr>
                 <tr bgcolor='yellow'>

@@ -7,11 +7,11 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <?php $page_title ='Dò số'; include '../../Website/includes/headtag.html'; ?>
+        <?php $page_title ='Forms - Dò số'; include '../../Website/includes/headtag.html'; ?>
     </head>
-    <body>
+    <body style="background-color: darkseagreen">
         <?php include '../../Website/includes/header.php'; ?>
-        <table class="table-condensed table-striped table-hover" align="center">
+        <table class="table-condensed table-striped table-hover mt-5" align="center">
             <?php
                 $ve = $_GET["Ticket"];
                 $giai = $_SESSION['giai'];
@@ -103,7 +103,7 @@ and open the template in the editor.
                     }
                     echo "<tr><td class='text-center' colspan='3'>Vé của bạn: $ve </td></tr>";
                 }
-                else echo "<b class='text-danger'>SỐ VÉ PHẢI LÀ SỐ NGUYÊN > 0 CÓ 6 CHỮ SỐ</b>"
+                else echo "<h4 class='text-center text-danger mt-5'>SỐ VÉ PHẢI LÀ SỐ NGUYÊN > 0 CÓ 6 CHỮ SỐ</h4>"
             ?>
         </table>
         <div class="text-center">

@@ -5,12 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Kết quả thi đại học</title>
-    </head>
-    <body>
+   <?php $page_title='Forms - Kết quả thi đại học'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
             $total = "";
             $result = "";
             if(isset($_POST["submitp3b4"])){
@@ -27,8 +25,8 @@ and open the template in the editor.
                 }
             }
         ?>
-        <form action="#p3b4" method="POST" id="p3b4">
-            <table class="table-condensed col-6" align="center">
+        <form class="d-flex justify-content-center m-5" action="#p3b4" method="POST" id="p3b4">
+            <table class="table-condensed col-4" align="center">
                 <tr bgcolor='purple'>
                     <th colspan="3" class="text-center">
                         <h2 style="color:white">KẾT QUẢ THI ĐẠI HỌC</h2>
@@ -93,5 +91,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

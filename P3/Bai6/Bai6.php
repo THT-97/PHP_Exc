@@ -5,14 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <?php $page_title="Phép tính trên hai số"; include ('../../Website/includes/headtag.html')?>
-    <body>
+    <?php $page_title="Forms - Phép tính trên hai số"; include ('../../Website/includes/headtag.html')?>
+    <body style="background-color: darkseagreen">
         <?php include ('../../Website/includes/header.php')?>
-        <form action="Bai6xl.php" method="POST">
-            <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
+        <form class="d-flex justify-content-center m-5" action="Bai6xl.php" method="POST">
+            <table class="table-condensed table-light col-6" style="margin-left: auto; margin-right: auto">
                 <tr>
                     <th colspan="2">
-                        <h2 class="text-primary">PHÉP TÍNH TRÊN HAI SỐ</h2>
+                        <h2 class="text-center text-primary">PHÉP TÍNH TRÊN HAI SỐ</h2>
                     </th>
                 </tr>
                 <tr>

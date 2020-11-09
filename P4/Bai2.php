@@ -5,13 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Tính năm âm lịch</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
-    <body>
+    <?php $page_title='Array&String - Tính năm âm lịch'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
             $ly = null;
             $pic =null;
             $can = ["Quý","Giáp","Ất","Bính","Đinh","Mậu","Kỷ","Canh","Tân","Nhâm"];
@@ -26,12 +23,12 @@ and open the template in the editor.
                 }
             }
         ?>
-        <form action="#p4b2" method="GET" id="p4b2">
+        <form class="d-flex justify-content-center m-5" action="#p4b2" method="GET" id="p4b2">
             <table align="center" class="table-condensed">
                 <tr class="bg-primary">
                     <th class="text-center" colspan="3" style="color: white;"><h3 style="font-family:'Comic Sans MS'">TÍNH NĂM ÂM LỊCH</h3></th>
                 </tr>
-                <tr class="bg-info text-center">
+                <tr class="text-center" style="background-color: cyan">
                     <td class="text-primary">Năm dương lịch</td>
                     <td></td>
                     <td class="text-primary">Năm âm lịch</td>
@@ -52,5 +49,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

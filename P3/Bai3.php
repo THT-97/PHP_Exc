@@ -5,12 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Thanh toán tiền điện</title>
-    </head>
-    <body>
+    <?php $page_title='Forms - Thanh toán tiền điện'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
             $name = "";
             $cost = 0;
             $unit = 20000;
@@ -29,7 +27,7 @@ and open the template in the editor.
                 }
             }
         ?>
-        <form action="#p3b3" method="POST" id="p3b3">
+        <form class="d-flex justify-content-center m-5" action="#p3b3" method="POST" id="p3b3">
             <table style="border-collapse:collapse" width='30%'>
                 <tr bgcolor='orange'>
                     <th colspan="3" width='100%'>
@@ -66,5 +64,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

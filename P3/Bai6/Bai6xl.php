@@ -5,8 +5,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-     <?php $page_title="Phép tính trên hai số"; include ('../../Website/includes/headtag.html')?>
-    <body>
+     <?php $page_title="Forms - Phép tính trên hai số"; include ('../../Website/includes/headtag.html')?>
+    <body style="background-color: darkseagreen">
         <?php
             $a = $_POST["A"];
             $b = $_POST["B"];
@@ -23,10 +23,10 @@ and open the template in the editor.
             
             include ('../../Website/includes/header.php')
         ?>
-        <table class="table-condensed col-6" style="margin-left: auto; margin-right: auto">
+        <table class="mt-5 table-condensed table-light col-6" style="margin-left: auto; margin-right: auto">
                 <tr>
                     <th colspan="2">
-                        <h2 class="text-primary">PHÉP TÍNH TRÊN HAI SỐ</h2>
+                        <h2 class="text-center text-primary">PHÉP TÍNH TRÊN HAI SỐ</h2>
                     </th>
                 </tr>
                 <tr>

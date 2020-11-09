@@ -5,12 +5,12 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <?php $page_title="Form"; include ('../../Website/includes/headtag.html')?>
-    <body style="font-size: 150%">
+    <?php $page_title="Forms - Form"; include ('../../Website/includes/headtag.html')?>
+    <body style="background-color: darkseagreen; font-size: 120%">
         <?php include ('../../Website/includes/header.php')?>
-        <form action="config.php" method="POST">
-            <fieldset>
-                <legend><b>Enter your information</b></legend>
+        <form class="d-flex justify-content-center m-5" action="config.php" method="POST">
+            <fieldset class="col-10 bg-light">
+                <legend class="bg-info col-4"><b>Enter your information</b></legend>
                 <table border="1">
                     <tr>
                         <td>Họ tên:</td>
