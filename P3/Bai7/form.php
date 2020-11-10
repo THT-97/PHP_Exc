@@ -7,7 +7,13 @@ and open the template in the editor.
 <html>
     <?php $page_title="Forms - Form"; include ('../../Website/includes/headtag.html')?>
     <body style="background-color: darkseagreen; font-size: 120%">
-        <?php include ('../../Website/includes/header.php')?>
+        <?php
+            include ('../../Website/includes/header.php');
+            if(!isset($cUser)){
+                header("Location:../../Website/login.php");
+                exit();
+            }
+        ?>
         <form class="d-flex justify-content-center m-5" action="config.php" method="POST">
             <fieldset class="col-10 bg-light">
                 <legend class="bg-info col-4"><b>Enter your information</b></legend>

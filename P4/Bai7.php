@@ -5,16 +5,16 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Thay thế</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
-    <body>
+    <?php $page_title='Array&String - Thay thế'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             $a = '';
             $result = ''; 
-
             if(isset($_POST["submitp4b7"])){
                 function replace($arr, $target, $value){
                     for ($i = 0; $i < count($arr); $i++) if($arr[$i]==$target)$arr[$i] = $value;
@@ -30,7 +30,7 @@ and open the template in the editor.
                 $result = replace($arr, $n, $x);
             }
         ?>
-        <form action="#p4b7" method="POST" id="p4b7">
+        <form class="d-flex justify-content-center m-5" action="#p4b7" method="POST" id="p4b7">
             <table align="center" class="table-condensed">
                 <tr bgcolor='purple'>
                     <th class="text-center" colspan="3" style="color: white;">
@@ -66,5 +66,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

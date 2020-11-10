@@ -5,13 +5,17 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <?php $page_title ='Quản lý nhân viên'; include '../../Website/includes/headtag.html'; ?>
-    <body>
-        <?php 
-            require_once 'NhanVien.php';
+    <?php $page_title ='OOP - Quản lý nhân viên'; include '../../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen;">
+        <?php
             include ('../../Website/includes/header.php');
+            if(!isset($cUser)){
+                header("Location:../../Website/login.php");
+                exit();
+            }
+            require_once 'NhanVien.php';   
         ?>
-        <form action="#p5b1" method="POST" id="p5b1">
+        <form class="m-5" action="#p5b1" method="POST" id="p5b1">
             <h1 class="text-center text-uppercase">quản lý nhân viên</h1>
             <table align="center" class="table-condensed bg-warning">
                 <tr>

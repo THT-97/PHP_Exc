@@ -7,7 +7,13 @@ and open the template in the editor.
 <html>
     <?php $page_title="Forms - Phép tính trên hai số"; include ('../../Website/includes/headtag.html')?>
     <body style="background-color: darkseagreen">
-        <?php include ('../../Website/includes/header.php')?>
+        <?php
+            include ('../../Website/includes/header.php');
+            if(!isset($cUser)){
+                    header("Location:../../Website/login.php");
+                    exit();
+                }
+        ?>
         <form class="d-flex justify-content-center m-5" action="Bai6xl.php" method="POST">
             <table class="table-condensed table-light col-6" style="margin-left: auto; margin-right: auto">
                 <tr>

@@ -10,7 +10,13 @@ and open the template in the editor.
         <?php $page_title ='Forms - Dò số'; include '../../Website/includes/headtag.html'; ?>
     </head>
     <body style="background-color: darkseagreen">
-        <?php include '../../Website/includes/header.php'; ?>
+        <?php
+            include '../../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../../Website/login.php");
+                exit();
+            }
+        ?>
         <table class="table-condensed table-striped table-hover mt-5" align="center">
             <?php
                 $ve = $_GET["Ticket"];

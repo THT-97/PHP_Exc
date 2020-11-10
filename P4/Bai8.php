@@ -5,12 +5,11 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <?php $page_title ='Sắp xếp mảng'; include '../Website/includes/headtag.html'; ?>
-    <body>
+    <?php $page_title ='Array&String - Sắp xếp mảng'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
             $asc = "";
             $desc = "";
-
             function validateArray($str){
                 $arr = explode(",", $str);
                 foreach ($arr as $key => $value) if(!is_numeric($value)) unset ($arr[$key]);
@@ -61,7 +60,11 @@ and open the template in the editor.
                 $asc = fgets($f);
                 $desc = fgets($f);
             }
-            
+            include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             if(isset($_POST["submit"])){
                 $a = $_POST["arr"];
                 $arr = validateArray($a);
@@ -70,9 +73,8 @@ and open the template in the editor.
                 writeFile(implode(",", descend($arr)), "a");
                 readFromFile($a, $asc, $desc);
             }
-            include '../Website/includes/header.php';
         ?>
-        <form action="" method="POST">
+        <form class="d-flex justify-content-center m-5" action="" method="POST">
             <table align="center" class="table-condensed">
                 <tr bgcolor='cadetblue'>
                     <th class="text-center" colspan="3" style="color: white;">

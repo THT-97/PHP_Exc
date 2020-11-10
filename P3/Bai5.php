@@ -9,6 +9,10 @@ and open the template in the editor.
     <body style="background-color: darkseagreen">
         <?php
             include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             $cost = "";
             if(isset($_POST["submitp3b5"])){
                 $start = $_POST["Start"];

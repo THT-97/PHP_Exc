@@ -9,6 +9,10 @@ and open the template in the editor.
     <body style="background-color: darkseagreen">
         <?php
             include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             $name = "";
             $cost = 0;
             $unit = 20000;

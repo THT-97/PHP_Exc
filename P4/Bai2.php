@@ -9,6 +9,10 @@ and open the template in the editor.
     <body style="background-color: darkseagreen">
         <?php
             include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             $ly = null;
             $pic =null;
             $can = ["Quý","Giáp","Ất","Bính","Đinh","Mậu","Kỷ","Canh","Tân","Nhâm"];

@@ -5,16 +5,16 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Tìm kiếm</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
-    <body>
+    <?php $page_title='Array&String - Tìm kiếm'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             $a6 = '';
             $result = '';
-
             if(isset($_POST["submitp4b6"])){
                 function search($arr, $v){
                     $count = 0;
@@ -40,7 +40,7 @@ and open the template in the editor.
                 $a6 = implode(",  ", $arr);
             }
         ?>
-        <form action="#p4b6" method="POST" id="p4b6">
+        <form class="d-flex justify-content-center m-5" action="#p4b6" method="POST" id="p4b6">
             <table align="center" class="table-condensed">
                 <tr bgcolor='cadetblue'>
                     <th class="text-center" colspan="3" style="color: white;">
@@ -72,5 +72,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

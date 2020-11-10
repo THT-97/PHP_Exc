@@ -8,6 +8,11 @@ and open the template in the editor.
      <?php $page_title="Forms - Phép tính trên hai số"; include ('../../Website/includes/headtag.html')?>
     <body style="background-color: darkseagreen">
         <?php
+            include ('../../Website/includes/header.php');
+            if(!isset($cUser)){
+                header("Location:../../Website/login.php");
+                exit();
+            }
             $a = $_POST["A"];
             $b = $_POST["B"];
             $op = $_POST["operator"];
@@ -20,8 +25,6 @@ and open the template in the editor.
                 case 3: $result = $a * $b; break;
                 case 4: if($b!=0) $result = $a / $b; else $result = "Không thể chia"; break;
             }
-            
-            include ('../../Website/includes/header.php')
         ?>
         <table class="mt-5 table-condensed table-light col-6" style="margin-left: auto; margin-right: auto">
                 <tr>

@@ -7,7 +7,13 @@ and open the template in the editor.
 <html>
     <?php $page_title="Forms - Config"; include ('../../Website/includes/headtag.html');?>
     <body style="background-color: darkseagreen; font-size: 120%">
-        <?php include ('../../Website/includes/header.php'); ?>
+        <?php
+            include ('../../Website/includes/header.php');
+            if(!isset($cUser)){
+                header("Location:../../Website/login.php");
+                exit();
+            }
+        ?>
         <div class="m-5">
             <?php
                 if(isset($_POST["Submit"])){

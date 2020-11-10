@@ -5,13 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Đếm, ghép mảng và sắp xếp</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
-    <body>
+    <?php $page_title='Array&String - Đếm, ghép mảng và sắp xếp'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             $c = [];
             if(isset($_POST["submitp4b9"])){
                 $a = explode(",", $_POST["arr1"]);
@@ -19,7 +20,7 @@ and open the template in the editor.
                 $c = array_merge($a, $b);
             }
         ?>
-        <form action="#p4b9" method="POST" id="p4b9">
+        <form class="d-flex justify-content-center m-5" action="#p4b9" method="POST" id="p4b9">
             <table align="center" class="table-condensed">
                 <tr bgcolor='purple'>
                     <th class="text-center" colspan="3" style="color: white;">
@@ -63,5 +64,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

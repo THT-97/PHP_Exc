@@ -5,12 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Phân số</title>
-    </head>
-    <body>
+    <?php $page_title='OOP - Phân số'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
             $result = "";
             if(isset($_POST['submitp5b2'])){
                 class PhanSo{
@@ -110,9 +112,9 @@ and open the template in the editor.
                 }
             }
         ?>
-        <h1 style="color: purple" class="text-uppercase">Chọn phép tính trên phân số</h1>
-        <form action="#p5b2" method="POST" id="p5b2">
-            <table>
+        <form class="m-5" action="#p5b2" method="POST" id="p5b2">
+            <h1 style="color: purple" class="text-uppercase">Chọn phép tính trên phân số</h1>
+            <table align="center" class="table-secondary">
                 <tr>
                     <th>Nhập phân số 1:</th>
                     <td>Tử số:<input class="form-control" name="t1" type="number" min="0" value="<?php if(isset($_POST['t1'])) echo $a->getT() ?>"/></td>
@@ -124,9 +126,9 @@ and open the template in the editor.
                     <td>Mẫu số:<input class="form-control" name="m2" type="number" min="1" value="<?php if(isset($_POST['m2'])) echo $b->getM() ?>"/></td>
                 </tr>
             </table>
-            <fieldset class="col-6">
-                <legend class="col-4">Chọn phép tính:</legend>
-                <p>
+            <fieldset class="col-6 bg-white" style="margin-left: 30%">
+                <legend class="col-4 bg-secondary text-warning">Chọn phép tính:</legend>
+                <p class="text-center">
                     <input name="operator" type="radio" value="1" <?php if(isset($_POST["operator"]) && $op==1) echo "checked=checked"?> checked/>
                     Cộng
                     <input name="operator" type="radio" value="2" <?php if(isset($_POST["operator"]) && $op==2) echo "checked=checked"?>/>
@@ -136,9 +138,12 @@ and open the template in the editor.
                     <input name="operator" type="radio" value="4" <?php if(isset($_POST["operator"]) && $op==4) echo "checked=checked"?>/>
                     Chia
                 </p> 
+                <p class="text-center">
+                    <input name="submitp5b2" type="submit" value="Kết quả"/><br/>
+                    <?php echo $result ?>
+                </p>
             </fieldset>
-            <input name="submitp5b2" type="submit" value="Kết quả"/>
-            <p><?php echo $result ?></p>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>

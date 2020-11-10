@@ -5,13 +5,15 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Mua hoa</title>
-        <link rel="stylesheet" href="../bootstrap.min.css"/>
-    </head>
-    <body>
+    <?php $page_title='Array&String - Mua hoa'; include '../Website/includes/headtag.html'; ?>
+    <body style="background-color: darkseagreen">
         <?php
+            include '../Website/includes/header.php';
+            if(!isset($cUser)){
+                header("Location:../Website/login.php");
+                exit();
+            }
+            
             $flowers = [];
             if(isset($_POST['cart']) && trim($_POST['cart'])!="")
                 $flowers = explode(" -- ", trim($_POST['cart']));
@@ -32,7 +34,7 @@ and open the template in the editor.
                 $cart .= implode(" -- ", $flowers);
             }
         ?>
-        <form action="#p4b10" method="POST" id="p4b10">
+        <form class="d-flex justify-content-center m-5" action="#p4b10" method="POST" id="p4b10">
             <table align="center" class="table-condensed">
                 <tr bgcolor="khaki">
                     <th class="text-center" colspan="3" style="color: crimson">
@@ -52,8 +54,9 @@ and open the template in the editor.
                         </textarea>
                     </td>
                 </tr>
+                <tr><td colspan="3" class="text-center text-danger"><?php echo $warning ?></td></tr>
             </table>
-            <p class="text-center text-danger"><?php echo $warning ?></p>
         </form>
+        <?php include '../Website/includes/footer.html'; ?>
     </body>
 </html>
