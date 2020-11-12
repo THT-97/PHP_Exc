@@ -10,6 +10,7 @@
             display: inline-block;
             animation: vmarquee 30s linear infinite;
         }
+        .vmarquee ul:hover{animation-play-state:paused;}
         @keyframes vmarquee {
             0%   { transform: translate(0, 100%); }
             100% { transform: translate(0, -101%); }
@@ -89,8 +90,6 @@
                         <li><a href="https://www.php.net/tut.php" target="_blank">Trang web tra cứu các lệnh PHP</a></li>
                         <li><a href="https://www.apachefriends.org/index.html" target="_blank">XAMPP</a></li>
                         <li><a href="https://github.com/THT57131383/PHP_Exc" target="_blank">Mã nguồn trang web</a></li>
-                        <li><a href="#">link5</a></li>
-                        <li><a href="#">link6</a></li>
                     </ul>
                 </div>
                 <hr/>
