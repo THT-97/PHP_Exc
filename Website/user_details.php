@@ -18,7 +18,7 @@ and open the template in the editor.
         
         <table style="margin-top: 1%; font-size: 200%; font-family: sans-serif" align="center" class="table-condensed table-info">
             <tr bgcolor="green">
-                <th colspan="3"><h1 class="text-warning text-center" style="margin-left: 10%"><b>USER</b></h1></th>
+                <th colspan="3"><h1 class="text-warning text-center" style="margin-left: 10%"><b>THÀNH VIÊN</b></h1></th>
             </tr>
             <tr><td rowspan="8"><img alt="userPic" src="includes/img/<?php echo $acc['pic'] ?>" width="300px" height="450px" /></td></tr>
             <tr><td>Username: <?php echo $acc['userName'] ?><td>

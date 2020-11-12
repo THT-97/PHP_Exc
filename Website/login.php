@@ -5,7 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <?php $page_title="Login"; include ('includes/headtag.html')?>
+    <?php
+        $page_title="Login";
+        include ('includes/headtag.html');
+    ?>
     <body style="background-color: darkseagreen">
         <?php
             include ('includes/header.php');

@@ -8,15 +8,16 @@
         $cId = $_SESSION['cID'];
         $cRole = $_SESSION['cRole'];
         if(isset($_POST['logout']) || (time()-$start)>$timeLimit){
-            session_destroy();
             header("Location:http://localhost:7000/baitap/Website/index.php");
+            ob_flush(); //flush buffer
+            session_destroy();
             exit();
         }
     }  
 ?>
 <div>
     <div id="top" class="text-center  col-12 float-left" style="background: url('http://localhost:7000/baitap/Website/includes/img/headerbg.png') no-repeat; background-size: 100% 100%">
-        <h1 class="text-uppercase text-warning" style="font-family: 'Lucida Console'; text-shadow: 2px 3px 2px yellow">hello there</h1>
+        <h1 class="text-uppercase text-warning mt-4" style="font-family: 'Lucida Console'; text-shadow: 2px 3px 2px yellow">a new dawn</h1>
         <h2 class="text-left text-uppercase" style="font-family: 'Impact'; color: cadetblue; text-shadow: 2px 1px 1px yellow">the future is now</h2>
     </div>
     <div class=" btn-group" style="width: 100%">

@@ -17,7 +17,7 @@ and open the template in the editor.
         
         <table style="margin-top: 1%; font-size: 200%; font-family: sans-serif" align="center" class="table-condensed table-info">
             <tr bgcolor="green">
-                <th colspan="2"><h1 class="text-warning text-center" style="margin-left: 10%"><b>AUTHOR</b></h1></th>
+                <th colspan="2"><h1 class="text-warning text-center" style="margin-left: 10%"><b>TÁC GIẢ</b></h1></th>
             </tr>
             <tr>
                 <td><img alt="authorPic" src="includes/img/<?php echo $acc['pic'] ?>" width="300px" height="400px" /></td>
