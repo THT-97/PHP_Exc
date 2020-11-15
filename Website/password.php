@@ -131,11 +131,10 @@
             }
         ?>
         <div style="margin-bottom: 5%">
-            <h1 class="text-center text-warning">Edit profile</h1>
             <form action="" method="POST" enctype="multipart/form-data">
                 <table style="margin-top: 1%; font-size: 120%; font-family: sans-serif" align="center" class="table-condensed table-info">
                     <tr bgcolor="green">
-                       <th colspan="4"><h1 class="text-warning text-center" style="margin-left: 10%"><b>Thông tin tài khoản</b></h1></th>
+                       <th colspan="4"><h1 class="text-uppercase text-warning text-center" style="margin-left: 10%"><b>Cập nhật tài khoản</b></h1></th>
                     </tr>
                     <tr><td rowspan="11"><img src="includes/img/<?php echo $acc['pic'] ?>" width="300px" height="400px" /></td></tr>
                     <tr>

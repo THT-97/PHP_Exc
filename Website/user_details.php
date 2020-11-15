@@ -38,7 +38,8 @@ and open the template in the editor.
                         else echo "password.php";
                         echo "'>Sửa</a>";
                     }
-                    if($cRole=='mngr' && $acc['type']!='mngr' || $cId=='u0000') echo "<a class='btn btn-danger' href='delete_user.php?id=$id'>Xóa</a>";
+                    if(($cRole=='mngr' && $acc['type']!='mngr') || ($cId=='u0000' && $acc['userID']!=$cId))
+                        echo "<a class='btn btn-danger' href='delete_user.php?id=$id'>Xóa</a>";
                     ?>   
                 </td>
             </tr>

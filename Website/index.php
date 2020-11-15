@@ -8,12 +8,13 @@
         }
         .vmarquee ul {
             display: inline-block;
-            animation: vmarquee 30s linear infinite;
+            padding-top: 60%;
+            animation: vmarquee 15s linear infinite;
         }
         .vmarquee ul:hover{animation-play-state:paused;}
         @keyframes vmarquee {
             0%   { transform: translate(0, 100%); }
-            100% { transform: translate(0, -101%); }
+            100% { transform: translate(0, -100%); }
         }
     </style>
     <body style="background-color: darkseagreen;">
@@ -84,11 +85,12 @@
                 <div style="background-color: yellow">
                     <h4 class="text-danger text-center text-uppercase">Hỗ trợ</h4>
                 </div>
-                <div class="vmarquee">
-                    <ul style="height: 50vh">
+                <div class="vmarquee" style="height: 50vh">
+                    <ul>
                         <li><a href="http://www.tizag.com/phpT/echo.php" target="_blank">Trang web học PHP</a></li>
                         <li><a href="https://www.php.net/tut.php" target="_blank">Trang web tra cứu các lệnh PHP</a></li>
                         <li><a href="https://www.apachefriends.org/index.html" target="_blank">XAMPP</a></li>
+                        <li><a href="https://hoangluyen.com/huong-dan-xu-ly-loi-port-xampp-nhanh-gon/" target="_blank">Xử lý xung đột cổng XAMPP</a></li>
                         <li><a href="https://github.com/THT57131383/PHP_Exc" target="_blank">Mã nguồn trang web</a></li>
                     </ul>
                 </div>
