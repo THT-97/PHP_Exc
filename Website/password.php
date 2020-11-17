@@ -144,7 +144,7 @@
                     </tr>
                     <tr>
                         <th>Password:</th>
-                        <td><input class="form-control" type="password" minlength="6" name="pass" value="pass" required/></td>
+                        <td><input class="form-control" type="password" minlength="6" name="pass" onfocus="this.value=''" value="pwd" required/></td>
                         <th class="text-danger"><?php if(isset($pasw)) echo $pasw ?></th>
                     </tr>
                     <tr>

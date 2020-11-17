@@ -196,7 +196,7 @@
                     </tr>
                     <tr>
                         <th>Admin password:</th>
-                        <td><input class="form-control" type="password" minlength="6" name="pass" value="pass" required/></td>
+                        <td><input class="form-control" type="password" minlength="6" name="pass" value="" required/></td>
                         <th class="text-danger"><?php if(isset($pasw)) echo $pasw ?></th>
                     </tr>
                     <tr>

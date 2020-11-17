@@ -69,16 +69,17 @@
                             . "'$id','$usn','$pass','$name','$dob',$gender,'$mail','$phone','$pic','usr')";
                     $result = mysqli_query($conn, $query);
                     move_uploaded_file($_FILES['pic']['tmp_name'], "includes/img/".$pic);
+//                    mail($mail,"Register successful", "Hello $usn, your account has been registered");
                     if($result!=false) header("Location:reginfo.php?userName=$usn");
                 }
             }
         ?>
-        <h1 class="text-center">Register</h1>
         <form action="" method="POST" enctype="multipart/form-data">
-            <table align="center" class="table-condensed">
+            <table align="center" class="table-condensed table-light mt-5">
+                <tr><th colspan="3"><h1 class="text-uppercase text-center text-success">Đăng ký</h1></th></tr>
                 <tr>
                     <td>Username:</td>
-                    <td><input class="form-control" type="text" minlength="4" name="usn" value="<?php if(isset($_POST['usn'])) echo $usn; else echo 'user'; ?>" required/></td>
+                    <td><input class="form-control" type="text" minlength="4" name="usn" onfocus="this.value=''" value="username" required/></td>
                     <th class="text-danger"><?php if(isset($usnw)) echo $usnw ?></th>
                 </tr>
                 <tr>

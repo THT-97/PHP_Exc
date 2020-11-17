@@ -24,7 +24,7 @@ and open the template in the editor.
                 if(mysqli_num_rows($result)==1){
                     $acc = mysqli_fetch_array($result);
                     $_SESSION['cID'] = $acc['userID'];
-                    $_SESSION['cUser'] = $acc['name'];
+                    $_SESSION['cUser'] = $acc['userName'];
                     $_SESSION['cRole'] = $acc['type'];
                     $_SESSION['sessionStart'] = time();
                     mysqli_close($conn);
@@ -35,10 +35,11 @@ and open the template in the editor.
             }
         ?>
         <form action="" method="POST">
-            <table align='center' class="table-condensed">
+            <table align='center' class="table-condensed table-info mt-5">
+                <tr><th colspan="3"><h1 class="text-center text-uppercase text-primary">Đăng nhập</h1></th></tr>
                 <tr>
                     <th>Username</th>
-                    <td><input class="form-control" type="text" name="user" value="<?php if(isset($_POST['user'])) echo $user; else echo 'user' ?>" required/></td>
+                    <td><input class="form-control" type="text" name="user" onfocus="this.value=''" value="username" required/></td>
                 </tr>
                 <tr>
                     <th>Password</th>
@@ -46,7 +47,7 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input class="btn btn-primary" name="submit" type="submit" value="Login"/>
+                        <input class="btn btn-primary" name="submit" type="submit" value="Đăng nhập"/>
                         <a class="btn btn-warning" href="javascript:window.history.back(-1);">Quay lại</a>
                     </td>
                 </tr>

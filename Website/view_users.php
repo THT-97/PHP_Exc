@@ -11,7 +11,7 @@
             if (!isset($_GET['page'])){$_GET['page'] = 1;}//vị trí của mẩu tin đầu tiên trên mỗi trang
             $offset =($_GET['page']-1)*$rowsPerPage; //lấy $rowsPerPage mẩu tin, bắt đầu từ vị trí $offset
         ?>
-        <h1 class="text-center text-danger">DANH SÁCH THÀNH VIÊN</h1>
+        <h1 class="text-center text-danger bg-white mt-4">DANH SÁCH THÀNH VIÊN</h1>
         <?php
             require 'conn.php';
             $query = "SELECT DISTINCT * FROM user, user_type WHERE type=typeID LIMIT $offset, $rowsPerPage";

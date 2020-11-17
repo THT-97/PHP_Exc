@@ -9,7 +9,6 @@
             $result = mysqli_query($conn, $query);
             $acc = mysqli_fetch_array($result);
         ?>
-        <h1 class="text-center">Register Info</h1>
         <table style="margin-top: 1%; font-size: 200%; font-family: sans-serif" align="center" class="table-condensed table-info">
             <tr bgcolor="green">
                 <th colspan="2"><h1 class="text-warning text-center" style="margin-left: 10%"><b>Thông tin đăng nhập</b></h1></th>
@@ -29,7 +28,7 @@
             </tr>
             <tr>
                 <td class="btn-group">
-                    <a class="btn btn-primary" href="login.php">Login</a>
+                    <a class="btn btn-primary" href="login.php">Đăng nhập</a>
                     <a class="btn btn-warning" href="index.php">Trang chủ</a>
                 </td>
             </tr>
