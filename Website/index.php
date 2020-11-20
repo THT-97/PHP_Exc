@@ -80,27 +80,32 @@
                 </ul>
             </div>
         </div>
-        <div class="col-2 float-right m-1" style="background-color: lightgray; height: 220%; padding: 0">
-            <div style="min-height: 50vh; position: sticky; top: 3em;">
-                <div style="background-color: yellow">
-                    <h4 class="text-danger text-center text-uppercase">Hỗ trợ</h4>
-                </div>
-                <div class="vmarquee" style="height: 50vh">
-                    <ul>
-                        <li><a href="http://www.tizag.com/phpT/echo.php" target="_blank">Trang web học PHP</a></li>
-                        <li><a href="https://www.php.net/tut.php" target="_blank">Trang web tra cứu các lệnh PHP</a></li>
-                        <li><a href="https://www.apachefriends.org/index.html" target="_blank">XAMPP</a></li>
-                        <li><a href="https://hoangluyen.com/huong-dan-xu-ly-loi-port-xampp-nhanh-gon/" target="_blank">Xử lý xung đột cổng XAMPP</a></li>
-                        <li><a href="https://github.com/THT57131383/PHP_Exc" target="_blank">Mã nguồn trang web</a></li>
-                    </ul>
-                </div>
-                <hr/>
-                <div style="height: 15%">
-                    <h4 class="text-center text-uppercase" style="color: darkgreen">Được thực hiện với</h4>
-                    <a href="https://netbeans.org/" target="_blank"><img alt="netbean" src="includes/img/index_mlogo.jpg" style="width: 100%; height: 90%" /></a>
-                </div>
-            </div>
-        </div>
+        <?php
+            if(isset($cId)){
+                echo "<div class='col-2 float-right m-1' style='background-color: lightgray; height: 220%; padding: 0'>
+                    <div style='min-height: 50vh; position: sticky; top: 3em;'>
+                        <div style='background-color: yellow'>
+                            <h4 class='text-danger text-center text-uppercase'>Hỗ trợ</h4>
+                        </div>
+                        <div class='vmarquee' style='height: 50vh'>
+                            <ul>
+                                <li><a href='http://www.tizag.com/phpT/echo.php' target='_blank'>Trang web học PHP</a></li>
+                                <li><a href='https://www.php.net/tut.php' target='_blank'>Trang web tra cứu các lệnh PHP</a></li>
+                                <li><a href='https://www.apachefriends.org/index.html' target='_blank'>XAMPP</a></li>
+                                <li><a href='https://hoangluyen.com/huong-dan-xu-ly-loi-port-xampp-nhanh-gon/' target='_blank'>Xử lý xung đột cổng XAMPP</a></li>
+                                <li><a href='https://github.com/THT57131383/PHP_Exc' target='_blank'>Mã nguồn trang web</a></li>
+                            </ul>
+                        </div>
+                        <hr/>
+                        <div style='height: 15%'>
+                            <h4 class='text-center text-uppercase' style='color: darkgreen'>Được thực hiện với</h4>
+                            <a href='https://netbeans.org/' target='_blank'><img alt='netbean' src='includes/img/index_mlogo.jpg' style='width: 100%; height: 90%' /></a>
+                        </div>
+                    </div>
+                </div>";
+            }  
+        ?>
+        
         <?php include ('includes/footer.html')?>
     </body>
 </html>
