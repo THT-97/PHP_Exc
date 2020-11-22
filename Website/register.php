@@ -69,7 +69,7 @@
                             . "'$id','$usn','$pass','$name','$dob',$gender,'$mail','$phone','$pic','usr')";
                     $result = mysqli_query($conn, $query);
                     move_uploaded_file($_FILES['pic']['tmp_name'], "includes/img/".$pic);
-//                    mail($mail,"Register successful", "Hello $usn, your account has been registered");
+//                    mail($mail,"Register successful", "Hello $usn, your account has been registered", "From: tranhuythinh97@gmail.com");
                     if($result!=false) header("Location:reginfo.php?userName=$usn");
                 }
             }
