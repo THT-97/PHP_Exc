@@ -23,10 +23,11 @@ and open the template in the editor.
                 $nutrition = $_POST['TPDD'];
                 $benefit = $_POST['Loi_ich'];
                 $img = $_FILES['Hinh_anh']['name'];
+//                $query = "INSERT INTO sua VALUES ($id,$name,etc)";
+//                $result = mysqli_query($conn, $query);
                 if($_FILES['Hinh_anh']['name']!=NULL){
                     move_uploaded_file($_FILES['Hinh_anh']['tmp_name'], "../images/".$_FILES['Hinh_anh']['name']);
                 }
-                $query = "INSERT INTO sua VALUES ";
             }
         ?>
         <form action="" method="POST" enctype="multipart/form-data">
